@@ -1,0 +1,483 @@
+{"kind":"deck","id":"pr/ai6vj3","name":"Deck"}
+{"kind":"layout","layoutId":"ee72f9f5-d033-48d0-842d-c58feead36d1","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"fb0041be-1bec-48f4-a3ed-2a6580ca357d","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/og7epx","slide":1,"title":"LLM Watermarking for","textShapes":16}
+{"kind":"textbox","id":"sh/s36hcrmh","slide":1,"text":"LLM Watermarking for\nIntellectual Property Protection","textPreview":"LLM Watermarking for | Intellectual Property Protection","textChars":53,"textLines":2,"bbox":[68,82,760,138]}
+{"kind":"textbox","id":"sh/zidonyd0","slide":1,"text":"Revised comparative presentation: KGW, EXP, and Combined KGW-EXP","textPreview":"Revised comparative presentation: KGW, EXP, and Combined KGW-EXP","textChars":64,"textLines":1,"bbox":[70,232,760,30]}
+{"kind":"textbox","id":"sh/a1gvy90j","slide":1,"text":"Guo Yutai, Zhong Yimin, Wang Yanzhi, Ouyang Zhaohong,\nQin Xiaoyu, Yao Hanbin | June 22, 2026","textPreview":"Guo Yutai, Zhong Yimin, Wang Yanzhi, Ouyang Zhaohong, | Qin Xiaoyu, Yao Hanbin | June 22, 2026","textChars":92,"textLines":2,"bbox":[70,285,760,44]}
+{"kind":"shape","id":"sh/hgn29gr2","slide":1,"bbox":[790,86,1,500]}
+{"kind":"textbox","id":"sh/svu9knih","slide":1,"text":"Revision focus","textPreview":"Revision focus","textChars":14,"textLines":1,"bbox":[830,88,220,24]}
+{"kind":"textbox","id":"sh/za1gvy90","slide":1,"text":"The paper now adds a fusion method that embeds both KGW and EXP signals in one generation pipeline.","textPreview":"The paper now adds a fusion method that embeds both KGW and EXP signals in one generation pipeline.","textChars":99,"textLines":1,"bbox":[830,122,330,72]}
+{"kind":"shape","id":"sh/ap4r65wj","slide":1,"bbox":[830,236,100,28]}
+{"kind":"textbox","id":"sh/h4byhgn2","slide":1,"text":"KGW","textPreview":"KGW","textChars":3,"textLines":1,"bbox":[838,241,84,18]}
+{"kind":"textbox","id":"sh/sji5snel","slide":1,"text":"Green-list\nlogit bias","textPreview":"Green-list | logit bias","textChars":21,"textLines":2,"bbox":[952,229,210,48]}
+{"kind":"shape","id":"sh/qh0fepkz","slide":1,"bbox":[830,304,340,1]}
+{"kind":"shape","id":"sh/j2t83itg","slide":1,"bbox":[830,342,100,28]}
+{"kind":"textbox","id":"sh/8nqxs72x","slide":1,"text":"EXP","textPreview":"EXP","textChars":3,"textLines":1,"bbox":[838,347,84,18]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":1,"text":"Exponential\nresampling","textPreview":"Exponential | resampling","textChars":22,"textLines":2,"bbox":[952,335,210,48]}
+{"kind":"shape","id":"sh/q5o7qpg3","slide":1,"bbox":[830,410,340,1]}
+{"kind":"shape","id":"sh/jqh0fepk","slide":1,"bbox":[830,448,112,28]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":1,"text":"Combined","textPreview":"Combined","textChars":8,"textLines":1,"bbox":[838,453,96,18]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":1,"text":"Two-stage embedding\n+ Fisher detection","textPreview":"Two-stage embedding | + Fisher detection","textChars":38,"textLines":2,"bbox":[960,439,220,56]}
+{"kind":"shape","id":"sh/uxc3ylc7","slide":1,"bbox":[70,390,650,150]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":1,"text":"Presentation route","textPreview":"Presentation route","textChars":18,"textLines":1,"bbox":[94,410,180,20]}
+{"kind":"textbox","id":"sh/bat47y1k","slide":1,"text":"Evaluation metrics first, then experimental result analysis, then summary.","textPreview":"Evaluation metrics first, then experimental result analysis, then summary.","textChars":74,"textLines":1,"bbox":[94,442,570,62]}
+{"kind":"textbox","id":"sh/mp0bi9s3","slide":1,"text":"The cover intentionally avoids outcome metrics.","textPreview":"The cover intentionally avoids outcome metrics.","textChars":47,"textLines":1,"bbox":[94,512,380,20]}
+{"kind":"shape","id":"sh/tgfmlkjm","slide":1,"bbox":[64,674,1052,1]}
+{"kind":"textbox","id":"sh/4vmtwra5","slide":1,"text":"Source: revised paper title page and introduction.","textPreview":"Source: revised paper title page and introduction.","textChars":50,"textLines":1,"bbox":[64,684,900,20]}
+{"kind":"textbox","id":"sh/bm58z25k","slide":1,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1160,682,56,24]}
+{"kind":"notes","id":"nt/og7epx","slide":1,"text":""}
+{"kind":"slide","id":"sl/tr2txo","slide":2,"title":"REVISION FRAME","textShapes":19}
+{"kind":"shape","id":"sh/d4vmtwra","slide":2,"name":"kicker-2-marker","bbox":[64,50,5,16]}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":2,"name":"kicker-2-label","text":"REVISION FRAME","textPreview":"REVISION FRAME","textChars":14,"textLines":1,"bbox":[78,47,310,22]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":2,"text":"The revision turns a two-method comparison into a fusion-method study.","textPreview":"The revision turns a two-method comparison into a fusion-method study.","textChars":70,"textLines":1,"bbox":[64,82,900,96]}
+{"kind":"shape","id":"sh/o7qpg3ex","slide":2,"bbox":[64,180,180,2]}
+{"kind":"shape","id":"sh/dsji5sne","slide":2,"bbox":[78,210,62,62]}
+{"kind":"textbox","id":"sh/61032lsz","slide":2,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[78,223,62,32]}
+{"kind":"textbox","id":"sh/vmtwra5g","slide":2,"text":"Original baseline","textPreview":"Original baseline","textChars":17,"textLines":1,"bbox":[164,210,300,24]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":2,"text":"KGW and EXP are reproduced under unified conditions.","textPreview":"KGW and EXP are reproduced under unified conditions.","textChars":52,"textLines":1,"bbox":[164,240,500,40]}
+{"kind":"shape","id":"sh/dg7adsji","slide":2,"bbox":[108,276,1,24]}
+{"kind":"shape","id":"sh/1032lszq","slide":2,"bbox":[78,300,62,62]}
+{"kind":"textbox","id":"sh/cfa9w3m9","slide":2,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[78,313,62,32]}
+{"kind":"textbox","id":"sh/judg7ads","slide":2,"text":"Observed bottleneck","textPreview":"Observed bottleneck","textChars":19,"textLines":1,"bbox":[164,300,300,24]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":2,"text":"Single token-level watermarks degrade under synonym substitution and deletion.","textPreview":"Single token-level watermarks degrade under synonym substitution and deletion.","textChars":78,"textLines":1,"bbox":[164,330,500,40]}
+{"kind":"shape","id":"sh/1orytsvu","slide":2,"bbox":[108,366,1,24]}
+{"kind":"shape","id":"sh/c7u54zid","slide":2,"bbox":[78,390,62,62]}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":2,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[78,403,62,32]}
+{"kind":"textbox","id":"sh/u18jqh0f","slide":2,"text":"New contribution","textPreview":"New contribution","textChars":16,"textLines":1,"bbox":[164,390,300,24]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":2,"text":"Combined KGW-EXP overlays KGW logit bias with EXP resampling.","textPreview":"Combined KGW-EXP overlays KGW logit bias with EXP resampling.","textChars":61,"textLines":1,"bbox":[164,420,500,40]}
+{"kind":"shape","id":"sh/cvixczed","slide":2,"bbox":[108,456,1,24]}
+{"kind":"shape","id":"sh/c3ylc7u5","slide":2,"bbox":[78,480,62,62]}
+{"kind":"textbox","id":"sh/1kre1w7m","slide":2,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[78,493,62,32]}
+{"kind":"textbox","id":"sh/uxc3ylc7","slide":2,"text":"Joint decision","textPreview":"Joint decision","textChars":14,"textLines":1,"bbox":[164,480,300,24]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":2,"text":"Fisher's method fuses KGW and EXP p-values for the final detector.","textPreview":"Fisher's method fuses KGW and EXP p-values for the final detector.","textChars":66,"textLines":1,"bbox":[164,510,500,40]}
+{"kind":"shape","id":"sh/crmhk3q5","slide":2,"bbox":[735,220,370,284]}
+{"kind":"shape","id":"sh/1cfa9w3m","slide":2,"bbox":[735,220,8,284]}
+{"kind":"textbox","id":"sh/ulwval87","slide":2,"text":"What changed in the story","textPreview":"What changed in the story","textChars":25,"textLines":1,"bbox":[765,248,280,30]}
+{"kind":"textbox","id":"sh/j6tovaho","slide":2,"text":"The central claim is no longer only that EXP beats KGW under benign settings. The updated claim is that complementary token-level signals can materially improve robustness.","textPreview":"The central claim is no longer only that EXP beats KGW under benign settings. The updated claim is that complementary token-level signals...","textChars":172,"textLines":1,"bbox":[765,296,275,108]}
+{"kind":"shape","id":"sh/8nqxs72x","slide":2,"bbox":[765,426,260,1]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":2,"text":"This shifts the deck's result emphasis from pairwise comparison to the Combined method's robustness-quality balance.","textPreview":"This shifts the deck's result emphasis from pairwise comparison to the Combined method's robustness-quality balance.","textChars":116,"textLines":1,"bbox":[765,450,270,50]}
+{"kind":"shape","id":"sh/7qpg3ex0","slide":2,"bbox":[64,674,1052,1]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":2,"text":"Source: revised paper, Sections 1.3-1.4 and 2.1.","textPreview":"Source: revised paper, Sections 1.3-1.4 and 2.1.","textChars":48,"textLines":1,"bbox":[64,684,900,20]}
+{"kind":"textbox","id":"sh/pwb2hwfy","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,682,56,24]}
+{"kind":"notes","id":"nt/tr2txo","slide":2,"text":""}
+{"kind":"slide","id":"sl/yqv970","slide":3,"title":"EVALUATION METRICS","textShapes":23}
+{"kind":"shape","id":"sh/e9cvixcz","slide":3,"name":"kicker-3-marker","bbox":[64,50,5,16]}
+{"kind":"textbox","id":"sh/lwval87e","slide":3,"name":"kicker-3-label","text":"EVALUATION METRICS","textPreview":"EVALUATION METRICS","textChars":18,"textLines":1,"bbox":[78,47,310,22]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":3,"text":"One metric lens is used for KGW, EXP, and Combined.","textPreview":"One metric lens is used for KGW, EXP, and Combined.","textChars":51,"textLines":1,"bbox":[64,82,900,96]}
+{"kind":"shape","id":"sh/3itgfmlk","slide":3,"bbox":[64,180,180,2]}
+{"kind":"shape","id":"sh/ex0nuxc3","slide":3,"bbox":[72,210,330,324]}
+{"kind":"shape","id":"sh/loj2t83i","slide":3,"bbox":[72,210,330,8]}
+{"kind":"shape","id":"sh/w3m94fu1","slide":3,"bbox":[96,240,52,52]}
+{"kind":"textbox","id":"sh/3ex0nuxc","slide":3,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[96,251,52,30]}
+{"kind":"textbox","id":"sh/at47y1kr","slide":3,"text":"Effectiveness","textPreview":"Effectiveness","textChars":13,"textLines":1,"bbox":[164,241,210,26]}
+{"kind":"textbox","id":"sh/knih4byh","slide":3,"text":"Can the detector identify watermarked text while controlling false positives?","textPreview":"Can the detector identify watermarked text while controlling false positives?","textChars":77,"textLines":1,"bbox":[164,272,210,54]}
+{"kind":"shape","id":"sh/d8bat47y","slide":3,"bbox":[96,342,282,1]}
+{"kind":"shape","id":"sh/2lszqtcj","slide":3,"bbox":[100,370,7,7]}
+{"kind":"textbox","id":"sh/v6psfil0","slide":3,"text":"TPR under no attack","textPreview":"TPR under no attack","textChars":19,"textLines":1,"bbox":[120,364,238,34]}
+{"kind":"shape","id":"sh/kf6dcbul","slide":3,"bbox":[100,418,7,7]}
+{"kind":"textbox","id":"sh/d0z61032","slide":3,"text":"FPR on natural text","textPreview":"FPR on natural text","textChars":19,"textLines":1,"bbox":[120,412,238,34]}
+{"kind":"shape","id":"sh/29gr2p8n","slide":3,"bbox":[100,466,7,7]}
+{"kind":"textbox","id":"sh/vu9knih4","slide":3,"text":"Score separation: z-score or p-value","textPreview":"Score separation: z-score or p-value","textChars":36,"textLines":1,"bbox":[120,460,238,34]}
+{"kind":"shape","id":"sh/k3q5o7qp","slide":3,"bbox":[456,210,330,324]}
+{"kind":"shape","id":"sh/donyd0z6","slide":3,"bbox":[456,210,330,8]}
+{"kind":"shape","id":"sh/hcrmhk3q","slide":3,"bbox":[480,240,52,52]}
+{"kind":"textbox","id":"sh/orytsvu9","slide":3,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[480,251,52,30]}
+{"kind":"textbox","id":"sh/z61032ls","slide":3,"text":"Imperceptibility","textPreview":"Imperceptibility","textChars":16,"textLines":1,"bbox":[548,241,210,26]}
+{"kind":"textbox","id":"sh/al87ed8b","slide":3,"text":"Does embedding preserve fluency and avoid suspicious statistical drift?","textPreview":"Does embedding preserve fluency and avoid suspicious statistical drift?","textChars":71,"textLines":1,"bbox":[548,272,210,54]}
+{"kind":"shape","id":"sh/h0fepkzu","slide":3,"bbox":[480,342,282,1]}
+{"kind":"shape","id":"sh/sfil0rqd","slide":3,"bbox":[484,370,7,7]}
+{"kind":"textbox","id":"sh/zupwb2hw","slide":3,"text":"PPL by GPT-2","textPreview":"PPL by GPT-2","textChars":12,"textLines":1,"bbox":[504,364,238,34]}
+{"kind":"shape","id":"sh/a9w3m94f","slide":3,"bbox":[484,418,7,7]}
+{"kind":"textbox","id":"sh/hwfyxobm","slide":3,"text":"Delta PPL versus natural baseline","textPreview":"Delta PPL versus natural baseline","textChars":33,"textLines":1,"bbox":[504,412,238,34]}
+{"kind":"shape","id":"sh/obm58z25","slide":3,"bbox":[484,466,7,7]}
+{"kind":"textbox","id":"sh/il0rqd4v","slide":3,"text":"Quality stability under parameters","textPreview":"Quality stability under parameters","textChars":34,"textLines":1,"bbox":[504,460,238,34]}
+{"kind":"shape","id":"sh/b6xkf6dc","slide":3,"bbox":[840,210,330,324]}
+{"kind":"shape","id":"sh/0rqd4vmt","slide":3,"bbox":[840,210,330,8]}
+{"kind":"shape","id":"sh/tcj6tova","slide":3,"bbox":[864,240,52,52]}
+{"kind":"textbox","id":"sh/idonyd0z","slide":3,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[864,251,52,30]}
+{"kind":"textbox","id":"sh/byhgn29g","slide":3,"text":"Robustness","textPreview":"Robustness","textChars":10,"textLines":1,"bbox":[932,241,210,26]}
+{"kind":"textbox","id":"sh/0je9cvix","slide":3,"text":"Does the watermark survive meaning-preserving word-level edits?","textPreview":"Does the watermark survive meaning-preserving word-level edits?","textChars":63,"textLines":1,"bbox":[932,272,210,54]}
+{"kind":"shape","id":"sh/t47y1kre","slide":3,"bbox":[864,342,282,1]}
+{"kind":"shape","id":"sh/i9s36hcr","slide":3,"bbox":[868,370,7,7]}
+{"kind":"textbox","id":"sh/bulwval8","slide":3,"text":"TPR after Word-S","textPreview":"TPR after Word-S","textChars":16,"textLines":1,"bbox":[888,364,238,34]}
+{"kind":"shape","id":"sh/rqd4vmtw","slide":3,"bbox":[868,418,7,7]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":3,"text":"TPR after Word-D","textPreview":"TPR after Word-D","textChars":16,"textLines":1,"bbox":[888,412,238,34]}
+{"kind":"shape","id":"sh/9w3m94fu","slide":3,"bbox":[868,466,7,7]}
+{"kind":"textbox","id":"sh/kb6xkf6d","slide":3,"text":"Robustness coefficient","textPreview":"Robustness coefficient","textChars":22,"textLines":1,"bbox":[888,460,238,34]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":3,"text":"The revised paper keeps the original metric order, but expands every result slide to include the fusion method.","textPreview":"The revised paper keeps the original metric order, but expands every result slide to include the fusion method.","textChars":111,"textLines":1,"bbox":[74,574,940,28]}
+{"kind":"shape","id":"sh/2t83itgf","slide":3,"bbox":[64,674,1052,1]}
+{"kind":"textbox","id":"sh/9knih4by","slide":3,"text":"Source: revised paper, Section 2.3.","textPreview":"Source: revised paper, Section 2.3.","textChars":35,"textLines":1,"bbox":[64,684,900,20]}
+{"kind":"textbox","id":"sh/kzupwb2h","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,682,56,24]}
+{"kind":"notes","id":"nt/yqv970","slide":3,"text":""}
+{"kind":"slide","id":"sl/xk4jbv","slide":4,"title":"COMBINED METHOD","textShapes":16}
+{"kind":"shape","id":"sh/vahoza1g","slide":4,"name":"kicker-4-marker","bbox":[64,50,5,16]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":4,"name":"kicker-4-label","text":"COMBINED METHOD","textPreview":"COMBINED METHOD","textChars":15,"textLines":1,"bbox":[78,47,310,22]}
+{"kind":"textbox","id":"sh/dg7adsji","slide":4,"text":"KGW-EXP embeds two token-level signals before making one Fisher decision.","textPreview":"KGW-EXP embeds two token-level signals before making one Fisher decision.","textChars":73,"textLines":1,"bbox":[64,82,900,96]}
+{"kind":"shape","id":"sh/6hcrmhk3","slide":4,"bbox":[64,180,180,2]}
+{"kind":"shape","id":"sh/z25kb6xk","slide":4,"bbox":[80,238,218,132]}
+{"kind":"shape","id":"sh/onyd0z61","slide":4,"bbox":[80,238,218,8]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":4,"text":"KGW bias","textPreview":"KGW bias","textChars":8,"textLines":1,"bbox":[98,262,178,24]}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":4,"text":"Split vocabulary into green/red lists and add delta = 2.0 to green-list logits.","textPreview":"Split vocabulary into green/red lists and add delta = 2.0 to green-list logits.","textChars":79,"textLines":1,"bbox":[98,300,178,54]}
+{"kind":"shape","id":"sh/vy90je9c","slide":4,"bbox":[306,302,42,2]}
+{"kind":"shape","id":"sh/nuxc3ylc","slide":4,"bbox":[346,298,8,10]}
+{"kind":"shape","id":"sh/y90je9cv","slide":4,"bbox":[364,238,218,132]}
+{"kind":"shape","id":"sh/5wjudg7a","slide":4,"bbox":[364,238,218,8]}
+{"kind":"textbox","id":"sh/gbq1oryt","slide":4,"text":"Temperature + softmax","textPreview":"Temperature + softmax","textChars":21,"textLines":1,"bbox":[382,262,178,24]}
+{"kind":"textbox","id":"sh/n29gr2p8","slide":4,"text":"Scale biased logits and compute the adjusted candidate distribution.","textPreview":"Scale biased logits and compute the adjusted candidate distribution.","textChars":68,"textLines":1,"bbox":[382,300,178,54]}
+{"kind":"shape","id":"sh/yhgn29gr","slide":4,"bbox":[590,302,42,2]}
+{"kind":"shape","id":"sh/58z25kb6","slide":4,"bbox":[630,298,8,10]}
+{"kind":"shape","id":"sh/gn29gr2p","slide":4,"bbox":[648,238,218,132]}
+{"kind":"shape","id":"sh/neloj2t8","slide":4,"bbox":[648,238,218,8]}
+{"kind":"textbox","id":"sh/ytsvu9kn","slide":4,"text":"EXP resampling","textPreview":"EXP resampling","textChars":14,"textLines":1,"bbox":[666,262,178,24]}
+{"kind":"textbox","id":"sh/2x4nap4r","slide":4,"text":"Sample the token maximizing the prefix-keyed exponential resampling score.","textPreview":"Sample the token maximizing the prefix-keyed exponential resampling score.","textChars":74,"textLines":1,"bbox":[666,300,178,54]}
+{"kind":"shape","id":"sh/vixczed8","slide":4,"bbox":[874,302,42,2]}
+{"kind":"shape","id":"sh/k3q5o7qp","slide":4,"bbox":[914,298,8,10]}
+{"kind":"shape","id":"sh/donyd0z6","slide":4,"bbox":[932,238,218,132]}
+{"kind":"shape","id":"sh/6psfil0r","slide":4,"bbox":[932,238,218,8]}
+{"kind":"textbox","id":"sh/val87ed8","slide":4,"text":"Fisher detector","textPreview":"Fisher detector","textChars":15,"textLines":1,"bbox":[950,262,178,24]}
+{"kind":"textbox","id":"sh/kre1w7mp","slide":4,"text":"Convert KGW z-score and EXP statistic to p-values, then combine them.","textPreview":"Convert KGW z-score and EXP statistic to p-values, then combine them.","textChars":69,"textLines":1,"bbox":[950,300,178,54]}
+{"kind":"shape","id":"sh/dcbulwva","slide":4,"bbox":[132,452,430,110]}
+{"kind":"textbox","id":"sh/2lszqtcj","slide":4,"text":"Detection statistic","textPreview":"Detection statistic","textChars":19,"textLines":1,"bbox":[156,474,170,20]}
+{"kind":"textbox","id":"sh/v6psfil0","slide":4,"text":"chi-square = -2 * (ln p_KGW + ln p_EXP)","textPreview":"chi-square = -2 * (ln p_KGW + ln p_EXP)","textChars":39,"textLines":1,"bbox":[156,506,360,26]}
+{"kind":"shape","id":"sh/h4byhgn2","slide":4,"bbox":[658,452,390,110]}
+{"kind":"textbox","id":"sh/sji5snel","slide":4,"text":"Decision rule","textPreview":"Decision rule","textChars":13,"textLines":1,"bbox":[682,474,170,20]}
+{"kind":"textbox","id":"sh/3ylc7u54","slide":4,"text":"score = -log10(p_combined)\nwatermarked if score > 2.2","textPreview":"score = -log10(p_combined) | watermarked if score > 2.2","textChars":53,"textLines":2,"bbox":[682,506,326,46]}
+{"kind":"shape","id":"sh/adsji5sn","slide":4,"bbox":[64,674,1052,1]}
+{"kind":"textbox","id":"sh/lszqtcj6","slide":4,"text":"Source: revised paper, Sections 3.4.1-3.4.4.","textPreview":"Source: revised paper, Sections 3.4.1-3.4.4.","textChars":44,"textLines":1,"bbox":[64,684,900,20]}
+{"kind":"textbox","id":"sh/s72x4nap","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,682,56,24]}
+{"kind":"notes","id":"nt/xk4jbv","slide":4,"text":""}
+{"kind":"slide","id":"sl/kj6jsu","slide":5,"title":"EXPERIMENTAL PROTOCOL","textShapes":18}
+{"kind":"shape","id":"sh/94fu18jq","slide":5,"name":"kicker-5-marker","bbox":[64,50,5,16]}
+{"kind":"textbox","id":"sh/2hwfyxob","slide":5,"name":"kicker-5-label","text":"EXPERIMENTAL PROTOCOL","textPreview":"EXPERIMENTAL PROTOCOL","textChars":21,"textLines":1,"bbox":[78,47,310,22]}
+{"kind":"textbox","id":"sh/r2p8nqxs","slide":5,"text":"The revision evaluates three methods under shared metrics but two experiment scales.","textPreview":"The revision evaluates three methods under shared metrics but two experiment scales.","textChars":84,"textLines":1,"bbox":[64,82,900,96]}
+{"kind":"shape","id":"sh/gvy90je9","slide":5,"bbox":[64,180,180,2]}
+{"kind":"shape","id":"sh/9gr2p8nq","slide":5,"bbox":[70,232,176,120]}
+{"kind":"shape","id":"sh/2p8nqxs7","slide":5,"bbox":[70,232,176,6]}
+{"kind":"textbox","id":"sh/ra5gbq1o","slide":5,"text":"Methods","textPreview":"Methods","textChars":7,"textLines":1,"bbox":[84,258,146,24]}
+{"kind":"textbox","id":"sh/kzupwb2h","slide":5,"text":"KGW, EXP, and Combined KGW-EXP","textPreview":"KGW, EXP, and Combined KGW-EXP","textChars":30,"textLines":1,"bbox":[84,296,146,40]}
+{"kind":"shape","id":"sh/9knih4by","slide":5,"bbox":[292,232,176,120]}
+{"kind":"shape","id":"sh/p8nqxs72","slide":5,"bbox":[292,232,176,6]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":5,"text":"Model","textPreview":"Model","textChars":5,"textLines":1,"bbox":[306,258,146,24]}
+{"kind":"textbox","id":"sh/72x4nap4","slide":5,"text":"Qwen2.5-1.5B-Instruct via MarkLLM","textPreview":"Qwen2.5-1.5B-Instruct via MarkLLM","textChars":33,"textLines":1,"bbox":[306,296,146,40]}
+{"kind":"shape","id":"sh/ih4byhgn","slide":5,"bbox":[514,232,176,120]}
+{"kind":"shape","id":"sh/pkzupwb2","slide":5,"bbox":[514,232,176,6]}
+{"kind":"textbox","id":"sh/0z61032l","slide":5,"text":"Baseline set","textPreview":"Baseline set","textChars":12,"textLines":1,"bbox":[528,258,146,24]}
+{"kind":"textbox","id":"sh/7ed8bat4","slide":5,"text":"20 news prompts, 200-token generations","textPreview":"20 news prompts, 200-token generations","textChars":38,"textLines":1,"bbox":[528,296,146,40]}
+{"kind":"shape","id":"sh/itgfmlkj","slide":5,"bbox":[736,232,176,120]}
+{"kind":"shape","id":"sh/pwb2hwfy","slide":5,"bbox":[736,232,176,6]}
+{"kind":"textbox","id":"sh/0bi9s36h","slide":5,"text":"Robustness set","textPreview":"Robustness set","textChars":14,"textLines":1,"bbox":[750,258,146,24]}
+{"kind":"textbox","id":"sh/sneloj2t","slide":5,"text":"50 C4 prompts, 100-token generations","textPreview":"50 C4 prompts, 100-token generations","textChars":36,"textLines":1,"bbox":[750,296,146,40]}
+{"kind":"shape","id":"sh/l87ed8ba","slide":5,"bbox":[958,232,176,120]}
+{"kind":"shape","id":"sh/ahoza1gv","slide":5,"bbox":[958,232,176,6]}
+{"kind":"textbox","id":"sh/32lszqtc","slide":5,"text":"Attacks","textPreview":"Attacks","textChars":7,"textLines":1,"bbox":[972,258,146,24]}
+{"kind":"textbox","id":"sh/szqtcj6t","slide":5,"text":"Word-S 20% substitution; Word-D 30% deletion","textPreview":"Word-S 20% substitution; Word-D 30% deletion","textChars":44,"textLines":1,"bbox":[972,296,146,40]}
+{"kind":"shape","id":"sh/lkjm1cfa","slide":5,"bbox":[120,430,430,116]}
+{"kind":"textbox","id":"sh/at47y1kr","slide":5,"text":"Combined configuration","textPreview":"Combined configuration","textChars":22,"textLines":1,"bbox":[146,452,240,24]}
+{"kind":"textbox","id":"sh/3ex0nuxc","slide":5,"text":"KGW gamma 0.5, delta 2.0; EXP prefix k=4, threshold 1e-4; Fisher theta 2.2; shared hash key 15485863.","textPreview":"KGW gamma 0.5, delta 2.0; EXP prefix k=4, threshold 1e-4; Fisher theta 2.2; shared hash key 15485863.","textChars":101,"textLines":1,"bbox":[146,488,340,42]}
+{"kind":"shape","id":"sh/w3m94fu1","slide":5,"bbox":[646,430,410,116]}
+{"kind":"textbox","id":"sh/loj2t83i","slide":5,"text":"Interpretation guardrail","textPreview":"Interpretation guardrail","textChars":24,"textLines":1,"bbox":[672,452,240,24]}
+{"kind":"textbox","id":"sh/bulwval8","slide":5,"text":"The n=50 C4 robustness table is the main evidence for Combined; the n=20 news table explains why fusion was needed.","textPreview":"The n=50 C4 robustness table is the main evidence for Combined; the n=20 news table explains why fusion was needed.","textChars":115,"textLines":1,"bbox":[672,488,320,42]}
+{"kind":"shape","id":"sh/i9s36hcr","slide":5,"bbox":[64,674,1052,1]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":5,"text":"Source: revised paper, Sections 4.1 and Table 2.","textPreview":"Source: revised paper, Sections 4.1 and Table 2.","textChars":48,"textLines":1,"bbox":[64,684,900,20]}
+{"kind":"textbox","id":"sh/0fepkzup","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,682,56,24]}
+{"kind":"notes","id":"nt/kj6jsu","slide":5,"text":""}
+{"kind":"slide","id":"sl/s4qzid","slide":6,"title":"EXPERIMENTAL RESULT ANALYSIS","textShapes":19}
+{"kind":"shape","id":"sh/t47y1kre","slide":6,"name":"kicker-6-marker","bbox":[64,50,5,16]}
+{"kind":"textbox","id":"sh/idonyd0z","slide":6,"name":"kicker-6-label","text":"EXPERIMENTAL RESULT ANALYSIS","textPreview":"EXPERIMENTAL RESULT ANALYSIS","textChars":28,"textLines":1,"bbox":[78,47,310,22]}
+{"kind":"textbox","id":"sh/byhgn29g","slide":6,"text":"EXP and Combined reach perfect benign detection; KGW remains weaker.","textPreview":"EXP and Combined reach perfect benign detection; KGW remains weaker.","textChars":68,"textLines":1,"bbox":[64,82,900,96]}
+{"kind":"shape","id":"sh/0rqd4vmt","slide":6,"bbox":[64,180,180,2]}
+{"kind":"textbox","id":"sh/tcj6tova","slide":6,"text":"TPR under no attack","textPreview":"TPR under no attack","textChars":19,"textLines":1,"bbox":[110,220,300,22]}
+{"kind":"shape","id":"sh/il0rqd4v","slide":6,"bbox":[110,492,430,1]}
+{"kind":"shape","id":"sh/b6xkf6dc","slide":6,"bbox":[110,282,115.33,210]}
+{"kind":"textbox","id":"sh/032lszqt","slide":6,"text":"1.000","textPreview":"1.000","textChars":5,"textLines":1,"bbox":[110,257,115.33,18]}
+{"kind":"textbox","id":"sh/tovahoza","slide":6,"text":"EXP","textPreview":"EXP","textChars":3,"textLines":1,"bbox":[104,502,127.33,34]}
+{"kind":"shape","id":"sh/l87ed8ba","slide":6,"bbox":[267.33,324,115.33,168]}
+{"kind":"textbox","id":"sh/sneloj2t","slide":6,"text":"0.800","textPreview":"0.800","textChars":5,"textLines":1,"bbox":[267.33,299,115.33,18]}
+{"kind":"textbox","id":"sh/32lszqtc","slide":6,"text":"KGW","textPreview":"KGW","textChars":3,"textLines":1,"bbox":[261.33,502,127.33,34]}
+{"kind":"shape","id":"sh/ahoza1gv","slide":6,"bbox":[424.67,282,115.33,210]}
+{"kind":"textbox","id":"sh/lkjm1cfa","slide":6,"text":"1.000","textPreview":"1.000","textChars":5,"textLines":1,"bbox":[424.67,257,115.33,18]}
+{"kind":"textbox","id":"sh/szqtcj6t","slide":6,"text":"Combined","textPreview":"Combined","textChars":8,"textLines":1,"bbox":[418.67,502,127.33,34]}
+{"kind":"shape","id":"sh/3ex0nuxc","slide":6,"bbox":[612,242,176,124]}
+{"kind":"textbox","id":"sh/at47y1kr","slide":6,"text":"ALL FPR","textPreview":"ALL FPR","textChars":7,"textLines":1,"bbox":[628,256,144,18]}
+{"kind":"textbox","id":"sh/loj2t83i","slide":6,"text":"0.000","textPreview":"0.000","textChars":5,"textLines":1,"bbox":[628,280,144,36]}
+{"kind":"textbox","id":"sh/w3m94fu1","slide":6,"text":"False positives remain controlled across reported configurations.","textPreview":"False positives remain controlled across reported configurations.","textChars":65,"textLines":1,"bbox":[628,324,144,28]}
+{"kind":"shape","id":"sh/s72x4nap","slide":6,"bbox":[850,242,4,92]}
+{"kind":"textbox","id":"sh/lszqtcj6","slide":6,"text":"EXP separation","textPreview":"EXP separation","textChars":14,"textLines":1,"bbox":[866,250,276,22]}
+{"kind":"textbox","id":"sh/a5gbq1or","slide":6,"text":"Watermarked p-values cluster near zero; natural p-values remain approximately uniform.","textPreview":"Watermarked p-values cluster near zero; natural p-values remain approximately uniform.","textChars":86,"textLines":1,"bbox":[866,276,276,48]}
+{"kind":"shape","id":"sh/3m94fu18","slide":6,"bbox":[850,372,4,92]}
+{"kind":"textbox","id":"sh/sji5snel","slide":6,"text":"Combined detector","textPreview":"Combined detector","textChars":17,"textLines":1,"bbox":[866,380,276,22]}
+{"kind":"textbox","id":"sh/h4byhgn2","slide":6,"text":"Fisher fusion lets two weaker p-value signals become one stronger decision statistic.","textPreview":"Fisher fusion lets two weaker p-value signals become one stronger decision statistic.","textChars":85,"textLines":1,"bbox":[866,406,276,48]}
+{"kind":"textbox","id":"sh/adsji5sn","slide":6,"text":"Caveat: Combined benign detection is reported through the revised all-method comparison and robustness experiment, while baseline EXP/KGW detection uses the n=20 news setup.","textPreview":"Caveat: Combined benign detection is reported through the revised all-method comparison and robustness experiment, while baseline EXP/KGW...","textChars":173,"textLines":1,"bbox":[612,512,520,50]}
+{"kind":"shape","id":"sh/3ylc7u54","slide":6,"bbox":[64,674,1052,1]}
+{"kind":"textbox","id":"sh/svu9knih","slide":6,"text":"Source: revised paper, Tables 3, 8, and 9.","textPreview":"Source: revised paper, Tables 3, 8, and 9.","textChars":42,"textLines":1,"bbox":[64,684,900,20]}
+{"kind":"textbox","id":"sh/hgn29gr2","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,682,56,24]}
+{"kind":"notes","id":"nt/s4qzid","slide":6,"text":""}
+{"kind":"slide","id":"sl/61xuqr","slide":7,"title":"EXPERIMENTAL RESULT ANALYSIS","textShapes":21}
+{"kind":"shape","id":"sh/h4byhgn2","slide":7,"name":"kicker-7-marker","bbox":[64,50,5,16]}
+{"kind":"textbox","id":"sh/adsji5sn","slide":7,"name":"kicker-7-label","text":"EXPERIMENTAL RESULT ANALYSIS","textPreview":"EXPERIMENTAL RESULT ANALYSIS","textChars":28,"textLines":1,"bbox":[78,47,310,22]}
+{"kind":"textbox","id":"sh/3ylc7u54","slide":7,"text":"Combined sits closest to natural text quality instead of drifting high or low.","textPreview":"Combined sits closest to natural text quality instead of drifting high or low.","textChars":78,"textLines":1,"bbox":[64,82,900,96]}
+{"kind":"shape","id":"sh/s72x4nap","slide":7,"bbox":[64,180,180,2]}
+{"kind":"textbox","id":"sh/lszqtcj6","slide":7,"text":"Mean PPL by GPT-2; natural baseline = 19.63","textPreview":"Mean PPL by GPT-2; natural baseline = 19.63","textChars":43,"textLines":1,"bbox":[90,220,500,22]}
+{"kind":"textbox","id":"sh/a5gbq1or","slide":7,"text":"EXP","textPreview":"EXP","textChars":3,"textLines":1,"bbox":[90,277,100,24]}
+{"kind":"shape","id":"sh/3m94fu18","slide":7,"bbox":[220,289,430,1]}
+{"kind":"shape","id":"sh/s36hcrmh","slide":7,"bbox":[220,278,184.73,22]}
+{"kind":"textbox","id":"sh/hoza1gvy","slide":7,"text":"11.17","textPreview":"11.17","textChars":5,"textLines":1,"bbox":[412.73,279,58,18]}
+{"kind":"textbox","id":"sh/58z25kb6","slide":7,"text":"-8.46","textPreview":"-8.46","textChars":5,"textLines":1,"bbox":[484.73,279,80,18]}
+{"kind":"textbox","id":"sh/gn29gr2p","slide":7,"text":"KGW","textPreview":"KGW","textChars":3,"textLines":1,"bbox":[90,347,100,24]}
+{"kind":"shape","id":"sh/n29gr2p8","slide":7,"bbox":[220,359,430,1]}
+{"kind":"shape","id":"sh/yhgn29gr","slide":7,"bbox":[220,348,414.29,22]}
+{"kind":"textbox","id":"sh/5wjudg7a","slide":7,"text":"25.05","textPreview":"25.05","textChars":5,"textLines":1,"bbox":[642.29,349,58,18]}
+{"kind":"textbox","id":"sh/gbq1oryt","slide":7,"text":"+5.42","textPreview":"+5.42","textChars":5,"textLines":1,"bbox":[714.29,349,80,18]}
+{"kind":"textbox","id":"sh/nuxc3ylc","slide":7,"text":"Combined","textPreview":"Combined","textChars":8,"textLines":1,"bbox":[90,417,100,24]}
+{"kind":"shape","id":"sh/y90je9cv","slide":7,"bbox":[220,429,430,1]}
+{"kind":"shape","id":"sh/5sneloj2","slide":7,"bbox":[220,418,285.45,22]}
+{"kind":"textbox","id":"sh/cbulwval","slide":7,"text":"17.26","textPreview":"17.26","textChars":5,"textLines":1,"bbox":[513.45,419,58,18]}
+{"kind":"textbox","id":"sh/8nqxs72x","slide":7,"text":"-2.37","textPreview":"-2.37","textChars":5,"textLines":1,"bbox":[585.45,419,80,18]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":7,"text":"Natural","textPreview":"Natural","textChars":7,"textLines":1,"bbox":[90,487,100,24]}
+{"kind":"shape","id":"sh/qh0fepkz","slide":7,"bbox":[220,499,430,1]}
+{"kind":"shape","id":"sh/j2t83itg","slide":7,"bbox":[220,488,324.65,22]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":7,"text":"19.63","textPreview":"19.63","textChars":5,"textLines":1,"bbox":[552.65,489,58,18]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":7,"text":"baseline","textPreview":"baseline","textChars":8,"textLines":1,"bbox":[624.65,489,80,18]}
+{"kind":"shape","id":"sh/q5o7qpg3","slide":7,"bbox":[544.65,250,1,260]}
+{"kind":"textbox","id":"sh/jqh0fepk","slide":7,"text":"natural\n19.63","textPreview":"natural | 19.63","textChars":13,"textLines":2,"bbox":[552.65,246,64,36]}
+{"kind":"shape","id":"sh/c3ylc7u5","slide":7,"bbox":[742,240,340,250]}
+{"kind":"shape","id":"sh/1kre1w7m","slide":7,"bbox":[742,240,8,250]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":7,"text":"Quality interpretation","textPreview":"Quality interpretation","textChars":22,"textLines":1,"bbox":[770,268,240,30]}
+{"kind":"textbox","id":"sh/2t83itgf","slide":7,"text":"KGW raises PPL above baseline, suggesting visible distribution distortion. EXP pushes PPL far below baseline, suggesting reduced lexical diversity.","textPreview":"KGW raises PPL above baseline, suggesting visible distribution distortion. EXP pushes PPL far below baseline, suggesting reduced lexical ...","textChars":147,"textLines":1,"bbox":[770,318,248,76]}
+{"kind":"shape","id":"sh/9knih4by","slide":7,"bbox":[770,414,238,1]}
+{"kind":"textbox","id":"sh/kzupwb2h","slide":7,"text":"Combined PPL = 17.26, with delta PPL = -2.37, making it closest to natural output in this table.","textPreview":"Combined PPL = 17.26, with delta PPL = -2.37, making it closest to natural output in this table.","textChars":96,"textLines":1,"bbox":[770,438,248,44]}
+{"kind":"shape","id":"sh/rqd4vmtw","slide":7,"bbox":[64,674,1052,1]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":7,"text":"Source: revised paper, Table 4 and Section 5.3.","textPreview":"Source: revised paper, Table 4 and Section 5.3.","textChars":47,"textLines":1,"bbox":[64,684,900,20]}
+{"kind":"textbox","id":"sh/9w3m94fu","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,682,56,24]}
+{"kind":"notes","id":"nt/61xuqr","slide":7,"text":""}
+{"kind":"slide","id":"sl/r2kvrh","slide":8,"title":"EXPERIMENTAL RESULT ANALYSIS","textShapes":26}
+{"kind":"shape","id":"sh/zqtcj6to","slide":8,"name":"kicker-8-marker","bbox":[64,50,5,16]}
+{"kind":"textbox","id":"sh/obm58z25","slide":8,"name":"kicker-8-label","text":"EXPERIMENTAL RESULT ANALYSIS","textPreview":"EXPERIMENTAL RESULT ANALYSIS","textChars":28,"textLines":1,"bbox":[78,47,310,22]}
+{"kind":"textbox","id":"sh/hwfyxobm","slide":8,"text":"Baseline sensitivity explains why neither single method is the final answer.","textPreview":"Baseline sensitivity explains why neither single method is the final answer.","textChars":76,"textLines":1,"bbox":[64,82,900,96]}
+{"kind":"shape","id":"sh/6xkf6dcb","slide":8,"bbox":[64,180,180,2]}
+{"kind":"shape","id":"sh/zed8v6ps","slide":8,"bbox":[82,218,480,326]}
+{"kind":"textbox","id":"sh/oza1gvy9","slide":8,"text":"KGW strength delta","textPreview":"KGW strength delta","textChars":18,"textLines":1,"bbox":[112,244,240,24]}
+{"kind":"textbox","id":"sh/hk3q5o7q","slide":8,"text":"TPR rises only when delta becomes aggressive, which can distort quality.","textPreview":"TPR rises only when delta becomes aggressive, which can distort quality.","textChars":72,"textLines":1,"bbox":[112,276,345,38]}
+{"kind":"shape","id":"sh/al87ed8b","slide":8,"bbox":[118,472,360,1]}
+{"kind":"shape","id":"sh/z61032ls","slide":8,"bbox":[118,470,56,2]}
+{"kind":"textbox","id":"sh/za1gvy90","slide":8,"text":"0.00","textPreview":"0.00","textChars":4,"textLines":1,"bbox":[118,445,56,18]}
+{"kind":"textbox","id":"sh/ap4r65wj","slide":8,"text":"0.1","textPreview":"0.1","textChars":3,"textLines":1,"bbox":[112,482,68,34]}
+{"kind":"shape","id":"sh/hgn29gr2","slide":8,"bbox":[194,470,56,2]}
+{"kind":"textbox","id":"sh/svu9knih","slide":8,"text":"0.00","textPreview":"0.00","textChars":4,"textLines":1,"bbox":[194,445,56,18]}
+{"kind":"textbox","id":"sh/zidonyd0","slide":8,"text":"0.3","textPreview":"0.3","textChars":3,"textLines":1,"bbox":[188,482,68,34]}
+{"kind":"shape","id":"sh/a1gvy90j","slide":8,"bbox":[270,449.6,56,22.4]}
+{"kind":"textbox","id":"sh/hoza1gvy","slide":8,"text":"0.20","textPreview":"0.20","textChars":4,"textLines":1,"bbox":[270,424.6,56,18]}
+{"kind":"textbox","id":"sh/s36hcrmh","slide":8,"text":"0.5","textPreview":"0.5","textChars":3,"textLines":1,"bbox":[264,482,68,34]}
+{"kind":"shape","id":"sh/3m94fu18","slide":8,"bbox":[346,404.8,56,67.2]}
+{"kind":"textbox","id":"sh/a5gbq1or","slide":8,"text":"0.60","textPreview":"0.60","textChars":4,"textLines":1,"bbox":[346,379.8,56,18]}
+{"kind":"textbox","id":"sh/yxobm58z","slide":8,"text":"1.0","textPreview":"1.0","textChars":3,"textLines":1,"bbox":[340,482,68,34]}
+{"kind":"shape","id":"sh/nih4byhg","slide":8,"bbox":[422,360,56,112]}
+{"kind":"textbox","id":"sh/g3ex0nux","slide":8,"text":"1.00","textPreview":"1.00","textChars":4,"textLines":1,"bbox":[422,335,56,18]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":8,"text":"2.0","textPreview":"2.0","textChars":3,"textLines":1,"bbox":[416,482,68,34]}
+{"kind":"shape","id":"sh/ylc7u54z","slide":8,"bbox":[640,218,480,326]}
+{"kind":"textbox","id":"sh/r65wjudg","slide":8,"text":"EXP threshold tau","textPreview":"EXP threshold tau","textChars":17,"textLines":1,"bbox":[670,244,240,24]}
+{"kind":"textbox","id":"sh/gr2p8nqx","slide":8,"text":"EXP is stable over threshold choices, but still degrades when token positions are deleted.","textPreview":"EXP is stable over threshold choices, but still degrades when token positions are deleted.","textChars":90,"textLines":1,"bbox":[670,276,345,38]}
+{"kind":"shape","id":"sh/9cvixcze","slide":8,"bbox":[682,472,320,1]}
+{"kind":"shape","id":"sh/yd0z6103","slide":8,"bbox":[682,371.2,81.33,100.8]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":8,"text":"0.90","textPreview":"0.90","textChars":4,"textLines":1,"bbox":[682,346.2,81.33,18]}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":8,"text":"1e-6","textPreview":"1e-6","textChars":4,"textLines":1,"bbox":[676,482,93.33,34]}
+{"kind":"shape","id":"sh/oj2t83it","slide":8,"bbox":[801.33,365.6,81.33,106.4]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":8,"text":"0.95","textPreview":"0.95","textChars":4,"textLines":1,"bbox":[801.33,340.6,81.33,18]}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":8,"text":"1e-4","textPreview":"1e-4","textChars":4,"textLines":1,"bbox":[795.33,482,93.33,34]}
+{"kind":"shape","id":"sh/dsji5sne","slide":8,"bbox":[920.67,365.6,81.33,106.4]}
+{"kind":"textbox","id":"sh/o7qpg3ex","slide":8,"text":"0.95","textPreview":"0.95","textChars":4,"textLines":1,"bbox":[920.67,340.6,81.33,18]}
+{"kind":"textbox","id":"sh/vmtwra5g","slide":8,"text":"1e-2","textPreview":"1e-2","textChars":4,"textLines":1,"bbox":[914.67,482,93.33,34]}
+{"kind":"shape","id":"sh/61032lsz","slide":8,"bbox":[416,566,4,58]}
+{"kind":"textbox","id":"sh/dg7adsji","slide":8,"text":"Fusion logic","textPreview":"Fusion logic","textChars":12,"textLines":1,"bbox":[432,574,406,22]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":8,"text":"Combined does not replace the baselines; it exploits their complementary failure modes.","textPreview":"Combined does not replace the baselines; it exploits their complementary failure modes.","textChars":87,"textLines":1,"bbox":[432,600,406,14]}
+{"kind":"shape","id":"sh/8bat47y1","slide":8,"bbox":[64,674,1052,1]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":8,"text":"Source: revised paper, Tables 5-6 and Section 4.4.","textPreview":"Source: revised paper, Tables 5-6 and Section 4.4.","textChars":50,"textLines":1,"bbox":[64,684,900,20]}
+{"kind":"textbox","id":"sh/q5o7qpg3","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,682,56,24]}
+{"kind":"notes","id":"nt/r2kvrh","slide":8,"text":""}
+{"kind":"slide","id":"sl/omdypi","slide":9,"title":"EXPERIMENTAL RESULT ANALYSIS","textShapes":21}
+{"kind":"shape","id":"sh/2x4nap4r","slide":9,"name":"kicker-9-marker","bbox":[64,50,5,16]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":9,"name":"kicker-9-label","text":"EXPERIMENTAL RESULT ANALYSIS","textPreview":"EXPERIMENTAL RESULT ANALYSIS","textChars":28,"textLines":1,"bbox":[78,47,310,22]}
+{"kind":"textbox","id":"sh/k3q5o7qp","slide":9,"text":"Single-method attacks expose the robustness gap that motivated fusion.","textPreview":"Single-method attacks expose the robustness gap that motivated fusion.","textChars":70,"textLines":1,"bbox":[64,82,900,96]}
+{"kind":"shape","id":"sh/val87ed8","slide":9,"bbox":[64,180,180,2]}
+{"kind":"textbox","id":"sh/6psfil0r","slide":9,"text":"Baseline n=20 attack TPR","textPreview":"Baseline n=20 attack TPR","textChars":24,"textLines":1,"bbox":[92,230,260,22]}
+{"kind":"shape","id":"sh/dcbulwva","slide":9,"bbox":[104,490,680,1]}
+{"kind":"shape","id":"sh/kre1w7mp","slide":9,"bbox":[164.33,300,48,190]}
+{"kind":"textbox","id":"sh/v6psfil0","slide":9,"text":"1.00","textPreview":"1.00","textChars":4,"textLines":1,"bbox":[160.33,278,56,16]}
+{"kind":"shape","id":"sh/2lszqtcj","slide":9,"bbox":[222.33,338,48,152]}
+{"kind":"textbox","id":"sh/szqtcj6t","slide":9,"text":"0.80","textPreview":"0.80","textChars":4,"textLines":1,"bbox":[218.33,316,56,16]}
+{"kind":"textbox","id":"sh/lkjm1cfa","slide":9,"text":"No attack","textPreview":"No attack","textChars":9,"textLines":1,"bbox":[112,502,210.67,32]}
+{"kind":"shape","id":"sh/at47y1kr","slide":9,"bbox":[391,480.5,48,9.5]}
+{"kind":"textbox","id":"sh/3ex0nuxc","slide":9,"text":"0.05","textPreview":"0.05","textChars":4,"textLines":1,"bbox":[387,458.5,56,16]}
+{"kind":"shape","id":"sh/sneloj2t","slide":9,"bbox":[449,480.5,48,9.5]}
+{"kind":"textbox","id":"sh/l87ed8ba","slide":9,"text":"0.05","textPreview":"0.05","textChars":4,"textLines":1,"bbox":[445,458.5,56,16]}
+{"kind":"textbox","id":"sh/ahoza1gv","slide":9,"text":"Word-S","textPreview":"Word-S","textChars":6,"textLines":1,"bbox":[338.67,502,210.67,32]}
+{"kind":"shape","id":"sh/32lszqtc","slide":9,"bbox":[617.67,488,48,2]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":9,"text":"0.00","textPreview":"0.00","textChars":4,"textLines":1,"bbox":[613.67,466,56,16]}
+{"kind":"shape","id":"sh/lwval87e","slide":9,"bbox":[675.67,471,48,19]}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":9,"text":"0.10","textPreview":"0.10","textChars":4,"textLines":1,"bbox":[671.67,449,56,16]}
+{"kind":"textbox","id":"sh/0z61032l","slide":9,"text":"Word-D","textPreview":"Word-D","textChars":6,"textLines":1,"bbox":[565.33,502,210.67,32]}
+{"kind":"shape","id":"sh/7ed8bat4","slide":9,"bbox":[614,256,12,12]}
+{"kind":"textbox","id":"sh/itgfmlkj","slide":9,"text":"EXP","textPreview":"EXP","textChars":3,"textLines":1,"bbox":[632,252,76,20]}
+{"kind":"shape","id":"sh/p8nqxs72","slide":9,"bbox":[700,256,12,12]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":9,"text":"KGW","textPreview":"KGW","textChars":3,"textLines":1,"bbox":[718,252,76,20]}
+{"kind":"shape","id":"sh/72x4nap4","slide":9,"bbox":[865,238,280,250]}
+{"kind":"shape","id":"sh/ih4byhgn","slide":9,"bbox":[865,238,8,250]}
+{"kind":"textbox","id":"sh/p4r65wju","slide":9,"text":"Failure mode","textPreview":"Failure mode","textChars":12,"textLines":1,"bbox":[895,266,180,26]}
+{"kind":"textbox","id":"sh/wjudg7ad","slide":9,"text":"Both KGW and EXP are token-level watermarks. Word-S changes token identities; Word-D removes scored positions.","textPreview":"Both KGW and EXP are token-level watermarks. Word-S changes token identities; Word-D removes scored positions.","textChars":110,"textLines":1,"bbox":[895,314,205,80]}
+{"kind":"shape","id":"sh/uxc3ylc7","slide":9,"bbox":[895,412,190,1]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":9,"text":"The old conclusion was fragility. The revised paper asks whether two fragile signals can become a stronger joint detector.","textPreview":"The old conclusion was fragility. The revised paper asks whether two fragile signals can become a stronger joint detector.","textChars":122,"textLines":1,"bbox":[895,436,214,48]}
+{"kind":"shape","id":"sh/c3ylc7u5","slide":9,"bbox":[104,560,4,64]}
+{"kind":"textbox","id":"sh/1kre1w7m","slide":9,"text":"Baseline result","textPreview":"Baseline result","textChars":15,"textLines":1,"bbox":[120,568,666,22]}
+{"kind":"textbox","id":"sh/ulwval87","slide":9,"text":"Word-S reduces both EXP and KGW to 0.050 TPR; Word-D leaves EXP at 0.000 and KGW at 0.100.","textPreview":"Word-S reduces both EXP and KGW to 0.050 TPR; Word-D leaves EXP at 0.000 and KGW at 0.100.","textChars":90,"textLines":1,"bbox":[120,594,666,20]}
+{"kind":"shape","id":"sh/j6tovaho","slide":9,"bbox":[64,674,1052,1]}
+{"kind":"textbox","id":"sh/crmhk3q5","slide":9,"text":"Source: revised paper, Table 7 and Section 4.5.","textPreview":"Source: revised paper, Table 7 and Section 4.5.","textChars":47,"textLines":1,"bbox":[64,684,900,20]}
+{"kind":"textbox","id":"sh/1cfa9w3m","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1160,682,56,24]}
+{"kind":"notes","id":"nt/omdypi","slide":9,"text":""}
+{"kind":"slide","id":"sl/vav0dl","slide":10,"title":"EXPERIMENTAL RESULT ANALYSIS","textShapes":28}
+{"kind":"shape","id":"sh/bq1oryts","slide":10,"name":"kicker-10-marker","bbox":[64,50,5,16]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":10,"name":"kicker-10-label","text":"EXPERIMENTAL RESULT ANALYSIS","textPreview":"EXPERIMENTAL RESULT ANALYSIS","textChars":28,"textLines":1,"bbox":[78,47,310,22]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":10,"text":"Combined improves robustness most where deletion weakens EXP.","textPreview":"Combined improves robustness most where deletion weakens EXP.","textChars":61,"textLines":1,"bbox":[64,82,900,96]}
+{"kind":"shape","id":"sh/mhk3q5o7","slide":10,"bbox":[64,180,180,2]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":10,"text":"n=50 C4 robustness TPR; FPR = 0.000 in all conditions","textPreview":"n=50 C4 robustness TPR; FPR = 0.000 in all conditions","textChars":53,"textLines":1,"bbox":[92,224,520,22]}
+{"kind":"shape","id":"sh/4nap4r65","slide":10,"bbox":[92,516,760,1]}
+{"kind":"shape","id":"sh/t83itgfm","slide":10,"bbox":[154.67,318.6,36,197.4]}
+{"kind":"textbox","id":"sh/mp0bi9s3","slide":10,"text":"0.94","textPreview":"0.94","textChars":4,"textLines":1,"bbox":[150.67,296.6,44,16]}
+{"kind":"shape","id":"sh/bat47y1k","slide":10,"bbox":[200.67,310.2,36,205.8]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":10,"text":"0.98","textPreview":"0.98","textChars":4,"textLines":1,"bbox":[196.67,288.2,44,16]}
+{"kind":"shape","id":"sh/uxc3ylc7","slide":10,"bbox":[246.67,306,36,210]}
+{"kind":"textbox","id":"sh/1kre1w7m","slide":10,"text":"1.00","textPreview":"1.00","textChars":4,"textLines":1,"bbox":[242.67,284,44,16]}
+{"kind":"textbox","id":"sh/c3ylc7u5","slide":10,"text":"No attack","textPreview":"No attack","textChars":9,"textLines":1,"bbox":[100,528,237.33,32]}
+{"kind":"shape","id":"sh/j6tovaho","slide":10,"bbox":[408,474,36,42]}
+{"kind":"textbox","id":"sh/ulwval87","slide":10,"text":"0.20","textPreview":"0.20","textChars":4,"textLines":1,"bbox":[404,452,44,16]}
+{"kind":"shape","id":"sh/1cfa9w3m","slide":10,"bbox":[454,335.4,36,180.6]}
+{"kind":"textbox","id":"sh/crmhk3q5","slide":10,"text":"0.86","textPreview":"0.86","textChars":4,"textLines":1,"bbox":[450,313.4,44,16]}
+{"kind":"shape","id":"sh/j2t83itg","slide":10,"bbox":[500,327,36,189]}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":10,"text":"0.90","textPreview":"0.90","textChars":4,"textLines":1,"bbox":[496,305,44,16]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":10,"text":"Word-S 20%","textPreview":"Word-S 20%","textChars":10,"textLines":1,"bbox":[353.33,528,237.33,32]}
+{"kind":"shape","id":"sh/7qpg3ex0","slide":10,"bbox":[661.33,490.8,36,25.2]}
+{"kind":"textbox","id":"sh/0bi9s36h","slide":10,"text":"0.12","textPreview":"0.12","textChars":4,"textLines":1,"bbox":[657.33,468.8,44,16]}
+{"kind":"shape","id":"sh/pwb2hwfy","slide":10,"bbox":[707.33,440.4,36,75.6]}
+{"kind":"textbox","id":"sh/ed8v6psf","slide":10,"text":"0.36","textPreview":"0.36","textChars":4,"textLines":1,"bbox":[703.33,418.4,44,16]}
+{"kind":"shape","id":"sh/7y1kre1w","slide":10,"bbox":[753.33,373.2,36,142.8]}
+{"kind":"textbox","id":"sh/wjudg7ad","slide":10,"text":"0.68","textPreview":"0.68","textChars":4,"textLines":1,"bbox":[749.33,351.2,44,16]}
+{"kind":"textbox","id":"sh/p4r65wju","slide":10,"text":"Word-D 30%","textPreview":"Word-D 30%","textChars":10,"textLines":1,"bbox":[606.67,528,237.33,32]}
+{"kind":"shape","id":"sh/ih4byhgn","slide":10,"bbox":[597,262,12,12]}
+{"kind":"textbox","id":"sh/72x4nap4","slide":10,"text":"KGW","textPreview":"KGW","textChars":3,"textLines":1,"bbox":[615,258,76,20]}
+{"kind":"shape","id":"sh/xc3ylc7u","slide":10,"bbox":[683,262,12,12]}
+{"kind":"textbox","id":"sh/4r65wjud","slide":10,"text":"EXP","textPreview":"EXP","textChars":3,"textLines":1,"bbox":[701,258,76,20]}
+{"kind":"shape","id":"sh/f6dcbulw","slide":10,"bbox":[769,262,12,12]}
+{"kind":"textbox","id":"sh/mlkjm1cf","slide":10,"text":"Combined","textPreview":"Combined","textChars":8,"textLines":1,"bbox":[787,258,76,20]}
+{"kind":"shape","id":"sh/xkf6dcbu","slide":10,"bbox":[910,240,210,132]}
+{"kind":"textbox","id":"sh/4zidonyd","slide":10,"text":"WORD-S GAIN","textPreview":"WORD-S GAIN","textChars":11,"textLines":1,"bbox":[926,254,178,18]}
+{"kind":"textbox","id":"sh/fepkzupw","slide":10,"text":"+4 pp","textPreview":"+4 pp","textChars":5,"textLines":1,"bbox":[926,278,178,36]}
+{"kind":"textbox","id":"sh/mtwra5gb","slide":10,"text":"Combined over EXP: 0.90 vs. 0.86.","textPreview":"Combined over EXP: 0.90 vs. 0.86.","textChars":33,"textLines":1,"bbox":[926,322,178,36]}
+{"kind":"shape","id":"sh/xobm58z2","slide":10,"bbox":[910,398,210,132]}
+{"kind":"textbox","id":"sh/83itgfml","slide":10,"text":"WORD-D GAIN","textPreview":"WORD-D GAIN","textChars":11,"textLines":1,"bbox":[926,412,178,18]}
+{"kind":"textbox","id":"sh/cfa9w3m9","slide":10,"text":"+32 pp","textPreview":"+32 pp","textChars":6,"textLines":1,"bbox":[926,436,178,36]}
+{"kind":"textbox","id":"sh/1032lszq","slide":10,"text":"Combined over EXP: 0.68 vs. 0.36.","textPreview":"Combined over EXP: 0.68 vs. 0.36.","textChars":33,"textLines":1,"bbox":[926,480,178,36]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":10,"text":"Why the gain is asymmetric","textPreview":"Why the gain is asymmetric","textChars":26,"textLines":1,"bbox":[96,566,250,22]}
+{"kind":"textbox","id":"sh/judg7ads","slide":10,"text":"Deletion shortens the sequence and hurts EXP's joint p-value. KGW still scores surviving tokens, and Fisher fusion can lift marginal cases above the threshold.","textPreview":"Deletion shortens the sequence and hurts EXP's joint p-value. KGW still scores surviving tokens, and Fisher fusion can lift marginal case...","textChars":159,"textLines":1,"bbox":[96,596,770,38]}
+{"kind":"shape","id":"sh/c7u54zid","slide":10,"bbox":[64,674,1052,1]}
+{"kind":"textbox","id":"sh/1orytsvu","slide":10,"text":"Source: revised paper, Table 8 and Sections 4.6, 5.4.","textPreview":"Source: revised paper, Table 8 and Sections 4.6, 5.4.","textChars":53,"textLines":1,"bbox":[64,684,900,20]}
+{"kind":"textbox","id":"sh/u18jqh0f","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1160,682,56,24]}
+{"kind":"notes","id":"nt/vav0dl","slide":10,"text":""}
+{"kind":"slide","id":"sl/ubmf3j","slide":11,"title":"EXPERIMENTAL RESULT ANALYSIS","textShapes":36}
+{"kind":"shape","id":"sh/hoza1gvy","slide":11,"name":"kicker-11-marker","bbox":[64,50,5,16]}
+{"kind":"textbox","id":"sh/a1gvy90j","slide":11,"name":"kicker-11-label","text":"EXPERIMENTAL RESULT ANALYSIS","textPreview":"EXPERIMENTAL RESULT ANALYSIS","textChars":28,"textLines":1,"bbox":[78,47,310,22]}
+{"kind":"textbox","id":"sh/zidonyd0","slide":11,"text":"Combined is the recommended adversarial-deployment option.","textPreview":"Combined is the recommended adversarial-deployment option.","textChars":58,"textLines":1,"bbox":[64,82,900,96]}
+{"kind":"shape","id":"sh/svu9knih","slide":11,"bbox":[64,180,180,2]}
+{"kind":"shape","id":"sh/hgn29gr2","slide":11,"bbox":[64,220,190,52]}
+{"kind":"textbox","id":"sh/ap4r65wj","slide":11,"text":"Dimension","textPreview":"Dimension","textChars":9,"textLines":1,"bbox":[74,228,170,40]}
+{"kind":"shape","id":"sh/za1gvy90","slide":11,"bbox":[254,220,205,52]}
+{"kind":"textbox","id":"sh/sji5snel","slide":11,"text":"EXP","textPreview":"EXP","textChars":3,"textLines":1,"bbox":[264,228,185,40]}
+{"kind":"shape","id":"sh/h4byhgn2","slide":11,"bbox":[459,220,205,52]}
+{"kind":"textbox","id":"sh/p4r65wju","slide":11,"text":"KGW","textPreview":"KGW","textChars":3,"textLines":1,"bbox":[469,228,185,40]}
+{"kind":"shape","id":"sh/wjudg7ad","slide":11,"bbox":[664,220,230,52]}
+{"kind":"textbox","id":"sh/7y1kre1w","slide":11,"text":"Combined","textPreview":"Combined","textChars":8,"textLines":1,"bbox":[674,228,210,40]}
+{"kind":"shape","id":"sh/ed8v6psf","slide":11,"bbox":[894,220,190,52]}
+{"kind":"textbox","id":"sh/pwb2hwfy","slide":11,"text":"Verdict","textPreview":"Verdict","textChars":7,"textLines":1,"bbox":[904,228,170,40]}
+{"kind":"shape","id":"sh/0bi9s36h","slide":11,"bbox":[64,272,190,52]}
+{"kind":"textbox","id":"sh/7qpg3ex0","slide":11,"text":"No-attack detection","textPreview":"No-attack detection","textChars":19,"textLines":1,"bbox":[74,280,170,40]}
+{"kind":"shape","id":"sh/i5sneloj","slide":11,"bbox":[254,272,205,52]}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":11,"text":"TPR 1.00, FPR 0.00","textPreview":"TPR 1.00, FPR 0.00","textChars":18,"textLines":1,"bbox":[264,280,185,40]}
+{"kind":"shape","id":"sh/0z61032l","slide":11,"bbox":[459,272,205,52]}
+{"kind":"textbox","id":"sh/w7mp0bi9","slide":11,"text":"TPR 0.80, FPR 0.00","textPreview":"TPR 0.80, FPR 0.00","textChars":18,"textLines":1,"bbox":[469,280,185,40]}
+{"kind":"shape","id":"sh/psfil0rq","slide":11,"bbox":[664,272,230,52]}
+{"kind":"textbox","id":"sh/e1w7mp0b","slide":11,"text":"TPR 1.00, FPR 0.00","textPreview":"TPR 1.00, FPR 0.00","textChars":18,"textLines":1,"bbox":[674,280,210,40]}
+{"kind":"shape","id":"sh/7mp0bi9s","slide":11,"bbox":[894,272,190,52]}
+{"kind":"textbox","id":"sh/wval87ed","slide":11,"text":"EXP / Combined","textPreview":"EXP / Combined","textChars":14,"textLines":1,"bbox":[904,280,170,40]}
+{"kind":"shape","id":"sh/pg3ex0nu","slide":11,"bbox":[64,324,190,52]}
+{"kind":"textbox","id":"sh/epkzupwb","slide":11,"text":"Text quality","textPreview":"Text quality","textChars":12,"textLines":1,"bbox":[74,332,170,40]}
+{"kind":"shape","id":"sh/7adsji5s","slide":11,"bbox":[254,324,205,52]}
+{"kind":"textbox","id":"sh/wra5gbq1","slide":11,"text":"PPL 11.17","textPreview":"PPL 11.17","textChars":9,"textLines":1,"bbox":[264,332,185,40]}
+{"kind":"shape","id":"sh/lc7u54zi","slide":11,"bbox":[459,324,205,52]}
+{"kind":"textbox","id":"sh/bat47y1k","slide":11,"text":"PPL 25.05","textPreview":"PPL 25.05","textChars":9,"textLines":1,"bbox":[469,332,185,40]}
+{"kind":"shape","id":"sh/mp0bi9s3","slide":11,"bbox":[664,324,230,52]}
+{"kind":"textbox","id":"sh/tgfmlkjm","slide":11,"text":"PPL 17.26, near baseline","textPreview":"PPL 17.26, near baseline","textChars":24,"textLines":1,"bbox":[674,332,210,40]}
+{"kind":"shape","id":"sh/4vmtwra5","slide":11,"bbox":[894,324,190,52]}
+{"kind":"textbox","id":"sh/bm58z25k","slide":11,"text":"Combined","textPreview":"Combined","textChars":8,"textLines":1,"bbox":[904,332,170,40]}
+{"kind":"shape","id":"sh/m1cfa9w3","slide":11,"bbox":[64,376,190,52]}
+{"kind":"textbox","id":"sh/tsvu9kni","slide":11,"text":"Word-S robustness","textPreview":"Word-S robustness","textChars":17,"textLines":1,"bbox":[74,384,170,40]}
+{"kind":"shape","id":"sh/47y1kre1","slide":11,"bbox":[254,376,205,52]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":11,"text":"TPR 0.86","textPreview":"TPR 0.86","textChars":8,"textLines":1,"bbox":[264,384,185,40]}
+{"kind":"shape","id":"sh/m58z25kb","slide":11,"bbox":[459,376,205,52]}
+{"kind":"textbox","id":"sh/idonyd0z","slide":11,"text":"TPR 0.20","textPreview":"TPR 0.20","textChars":8,"textLines":1,"bbox":[469,384,185,40]}
+{"kind":"shape","id":"sh/byhgn29g","slide":11,"bbox":[664,376,230,52]}
+{"kind":"textbox","id":"sh/0je9cvix","slide":11,"text":"TPR 0.90","textPreview":"TPR 0.90","textChars":8,"textLines":1,"bbox":[674,384,210,40]}
+{"kind":"shape","id":"sh/t47y1kre","slide":11,"bbox":[894,376,190,52]}
+{"kind":"textbox","id":"sh/il0rqd4v","slide":11,"text":"Combined","textPreview":"Combined","textChars":8,"textLines":1,"bbox":[904,384,170,40]}
+{"kind":"shape","id":"sh/b6xkf6dc","slide":11,"bbox":[64,428,190,52]}
+{"kind":"textbox","id":"sh/0rqd4vmt","slide":11,"text":"Word-D robustness","textPreview":"Word-D robustness","textChars":17,"textLines":1,"bbox":[74,436,170,40]}
+{"kind":"shape","id":"sh/tcj6tova","slide":11,"bbox":[254,428,205,52]}
+{"kind":"textbox","id":"sh/ixczed8v","slide":11,"text":"TPR 0.36","textPreview":"TPR 0.36","textChars":8,"textLines":1,"bbox":[264,436,185,40]}
+{"kind":"shape","id":"sh/bi9s36hc","slide":11,"bbox":[459,428,205,52]}
+{"kind":"textbox","id":"sh/h0fepkzu","slide":11,"text":"TPR 0.12","textPreview":"TPR 0.12","textChars":8,"textLines":1,"bbox":[469,436,185,40]}
+{"kind":"shape","id":"sh/sfil0rqd","slide":11,"bbox":[664,428,230,52]}
+{"kind":"textbox","id":"sh/zupwb2hw","slide":11,"text":"TPR 0.68","textPreview":"TPR 0.68","textChars":8,"textLines":1,"bbox":[674,436,210,40]}
+{"kind":"shape","id":"sh/a9w3m94f","slide":11,"bbox":[894,428,190,52]}
+{"kind":"textbox","id":"sh/hcrmhk3q","slide":11,"text":"Combined","textPreview":"Combined","textChars":8,"textLines":1,"bbox":[904,436,170,40]}
+{"kind":"shape","id":"sh/orytsvu9","slide":11,"bbox":[64,480,190,52]}
+{"kind":"textbox","id":"sh/z61032ls","slide":11,"text":"Complexity","textPreview":"Complexity","textChars":10,"textLines":1,"bbox":[74,488,170,40]}
+{"kind":"shape","id":"sh/al87ed8b","slide":11,"bbox":[254,480,205,52]}
+{"kind":"textbox","id":"sh/hk3q5o7q","slide":11,"text":"Moderate","textPreview":"Moderate","textChars":8,"textLines":1,"bbox":[264,488,185,40]}
+{"kind":"shape","id":"sh/oza1gvy9","slide":11,"bbox":[459,480,205,52]}
+{"kind":"textbox","id":"sh/kf6dcbul","slide":11,"text":"Simple","textPreview":"Simple","textChars":6,"textLines":1,"bbox":[469,488,185,40]}
+{"kind":"shape","id":"sh/d0z61032","slide":11,"bbox":[664,480,230,52]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":11,"text":"Highest","textPreview":"Highest","textChars":7,"textLines":1,"bbox":[674,488,210,40]}
+{"kind":"shape","id":"sh/vu9knih4","slide":11,"bbox":[894,480,190,52]}
+{"kind":"textbox","id":"sh/knih4byh","slide":11,"text":"Trade-off","textPreview":"Trade-off","textChars":9,"textLines":1,"bbox":[904,488,170,40]}
+{"kind":"shape","id":"sh/d8bat47y","slide":11,"bbox":[990,550,4,70]}
+{"kind":"textbox","id":"sh/2lszqtcj","slide":11,"text":"Deployment read","textPreview":"Deployment read","textChars":15,"textLines":1,"bbox":[1006,558,156,22]}
+{"kind":"textbox","id":"sh/v6psfil0","slide":11,"text":"Use Combined when paraphrasing or deletion attacks are realistic.","textPreview":"Use Combined when paraphrasing or deletion attacks are realistic.","textChars":65,"textLines":1,"bbox":[1006,584,156,26]}
+{"kind":"shape","id":"sh/kre1w7mp","slide":11,"bbox":[64,674,1052,1]}
+{"kind":"textbox","id":"sh/dcbulwva","slide":11,"text":"Source: revised paper, Table 9 and Section 5.5.","textPreview":"Source: revised paper, Table 9 and Section 5.5.","textChars":47,"textLines":1,"bbox":[64,684,900,20]}
+{"kind":"textbox","id":"sh/zidonyd0","slide":11,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1160,682,56,24]}
+{"kind":"notes","id":"nt/ubmf3j","slide":11,"text":""}
+{"kind":"slide","id":"sl/abvgn2","slide":12,"title":"Summary","textShapes":18}
+{"kind":"textbox","id":"sh/m58z25kb","slide":12,"text":"Summary","textPreview":"Summary","textChars":7,"textLines":1,"bbox":[72,68,380,56]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":12,"text":"The revised contribution is statistical fusion: two token-level signals, one stronger detector.","textPreview":"The revised contribution is statistical fusion: two token-level signals, one stronger detector.","textChars":95,"textLines":1,"bbox":[72,132,780,42]}
+{"kind":"shape","id":"sh/4byhgn29","slide":12,"bbox":[72,196,180,2]}
+{"kind":"shape","id":"sh/b2hwfyxo","slide":12,"bbox":[76,238,52,52]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":12,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[76,252,52,24]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":12,"text":"EXP remains the stronger standalone baseline.","textPreview":"EXP remains the stronger standalone baseline.","textChars":45,"textLines":1,"bbox":[154,236,720,26]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":12,"text":"It keeps perfect benign detection and low PPL, but deletion still reduces TPR to 0.36 in the larger robustness table.","textPreview":"It keeps perfect benign detection and low PPL, but deletion still reduces TPR to 0.36 in the larger robustness table.","textChars":117,"textLines":1,"bbox":[154,272,760,34]}
+{"kind":"shape","id":"sh/bat47y1k","slide":12,"bbox":[76,330,52,52]}
+{"kind":"textbox","id":"sh/mp0bi9s3","slide":12,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[76,344,52,24]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":12,"text":"KGW provides interpretable residual signal.","textPreview":"KGW provides interpretable residual signal.","textChars":43,"textLines":1,"bbox":[154,328,720,26]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":12,"text":"Its green-list z-score is fragile alone, yet surviving tokens can still contribute under deletion.","textPreview":"Its green-list z-score is fragile alone, yet surviving tokens can still contribute under deletion.","textChars":98,"textLines":1,"bbox":[154,364,760,34]}
+{"kind":"shape","id":"sh/m58z25kb","slide":12,"bbox":[76,422,52,52]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":12,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[76,436,52,24]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":12,"text":"Combined delivers the best overall balance.","textPreview":"Combined delivers the best overall balance.","textChars":43,"textLines":1,"bbox":[154,420,720,26]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":12,"text":"TPR reaches 1.00 without attack, 0.90 under Word-S, 0.68 under Word-D, and PPL stays close to natural baseline.","textPreview":"TPR reaches 1.00 without attack, 0.90 under Word-S, 0.68 under Word-D, and PPL stays close to natural baseline.","textChars":111,"textLines":1,"bbox":[154,456,760,34]}
+{"kind":"shape","id":"sh/mhk3q5o7","slide":12,"bbox":[76,514,52,52]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":12,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[76,528,52,24]}
+{"kind":"textbox","id":"sh/4vmtwra5","slide":12,"text":"The open problem is not solved completely.","textPreview":"The open problem is not solved completely.","textChars":42,"textLines":1,"bbox":[154,512,720,26]}
+{"kind":"textbox","id":"sh/tgfmlkjm","slide":12,"text":"Combined raises the robustness bar, but Word-D TPR of 0.68 leaves room for semantic-level watermarking.","textPreview":"Combined raises the robustness bar, but Word-D TPR of 0.68 leaves room for semantic-level watermarking.","textChars":103,"textLines":1,"bbox":[154,548,760,34]}
+{"kind":"shape","id":"sh/xc3ylc7u","slide":12,"bbox":[942,280,210,208]}
+{"kind":"textbox","id":"sh/4r65wjud","slide":12,"text":"Future direction","textPreview":"Future direction","textChars":16,"textLines":1,"bbox":[968,306,150,28]}
+{"kind":"textbox","id":"sh/f6dcbulw","slide":12,"text":"Move beyond exact token identity toward semantic or structural watermark signals that survive meaning-preserving transformations.","textPreview":"Move beyond exact token identity toward semantic or structural watermark signals that survive meaning-preserving transformations.","textChars":129,"textLines":1,"bbox":[968,356,150,92]}
+{"kind":"shape","id":"sh/mlkjm1cf","slide":12,"bbox":[64,674,1052,1]}
+{"kind":"textbox","id":"sh/xkf6dcbu","slide":12,"text":"Source: revised paper, Conclusion.","textPreview":"Source: revised paper, Conclusion.","textChars":34,"textLines":1,"bbox":[64,684,900,20]}
+{"kind":"textbox","id":"sh/4zidonyd","slide":12,"text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1160,682,56,24]}
+{"kind":"notes","id":"nt/abvgn2","slide":12,"text":""}

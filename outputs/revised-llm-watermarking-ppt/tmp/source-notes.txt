@@ -1,0 +1,23 @@
+source: 人工智能与大模型大论文_单栏.pdf
+title: LLM Watermarking for Intellectual Property Protection: A Comparative Study of KGW and EXP
+authors: Guo Yutai, Zhong Yimin, Wang Yanzhi, Ouyang Zhaohong, Qin Xiaoyu, Yao Hanbin
+date in paper: June 22, 2026
+pages: 24
+
+revision summary:
+- The paper now proposes a Combined KGW-EXP watermarking method.
+- The Combined method embeds both signals in one generation pipeline: KGW green-list logit bias first, then EXP exponential resampling on the adjusted distribution.
+- Detection combines KGW and EXP sub-detector p-values with Fisher's combination test.
+- Combined parameters reported: KGW gamma 0.5, KGW delta 2.0, KGW z-threshold 4.0, EXP prefix length k=4, EXP threshold 1e-4, Fisher threshold theta=2.2, shared hash key 15485863.
+- Experiments use MarkLLM and Qwen2.5-1.5B-Instruct. Baseline comparison uses 20 news prompts, 200-token generations. Combined robustness uses 50 C4 prompts and 100-token generations.
+
+key metrics:
+- Default detection for baselines: EXP TPR 1.000 / FPR 0.000; KGW TPR 0.800 / FPR 0.000.
+- Overall comparison states Combined also reaches TPR 1.000 / FPR 0.000 under no attack.
+- PPL by GPT-2: EXP 11.17, KGW 25.05, Combined 17.26, natural baseline 19.63.
+- Baseline KGW/EXP robustness n=20: EXP 1.000 / 0.050 / 0.000; KGW 0.800 / 0.050 / 0.100 for No Attack / Word-S / Word-D.
+- Larger robustness n=50 C4: KGW 0.94 / 0.20 / 0.12; EXP 0.98 / 0.86 / 0.36; Combined 1.00 / 0.90 / 0.68 for No Attack / Word-S 20% / Word-D 30%.
+
+source caveats:
+- Some old baseline KGW ablation PPL values remain from the earlier experiment and use a different PPL evaluation context; the revised deck focuses on the new all-method GPT-2 PPL table for cross-method quality.
+- Combined robustness uses a larger C4 robustness experiment, not the earlier n=20 news prompt baseline attack table.

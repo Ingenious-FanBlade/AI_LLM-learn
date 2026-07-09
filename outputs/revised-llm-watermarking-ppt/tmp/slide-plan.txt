@@ -1,0 +1,31 @@
+mode: create / revised deck matching the prior PPT style
+audience: research presentation audience
+language: English
+slide count: 12
+final file: outputs/llm-watermarking-comparison-revised.pptx
+
+visual system:
+- 1280x720 slides.
+- Warm near-white background (#F7F4EE), dark ink text (#17212B).
+- Method colors: EXP blue #2457A6, KGW green #26705A, Combined amber #B7892F, attack warning rust #C7634B.
+- Typography: Aptos Display for titles, Aptos for body and labels.
+- Charts are editable shape-built bars with direct labels.
+- Footer source line and page marker on every slide.
+
+slide outline:
+1. Cover: updated June 22 paper, KGW + EXP + Combined, no result metrics.
+2. Revision frame: the paper moves from comparison to fusion.
+3. Evaluation metrics: effectiveness, imperceptibility, robustness; all three methods share one metric lens.
+4. Combined method: two-stage embedding plus Fisher detection.
+5. Experimental protocol: three methods, datasets, lengths, attacks, and key Combined parameters.
+6. Baseline detection: EXP and Combined reach perfect benign detection; KGW remains weaker.
+7. Text quality: Combined PPL sits closest to natural baseline.
+8. Baseline sensitivity: KGW tradeoff and EXP stability explain why fusion is needed.
+9. Single-method attacks: KGW/EXP alone expose robustness gaps.
+10. Hybrid robustness: Combined improves Word-S and especially Word-D.
+11. Deployment matrix: Combined recommended when paraphrasing attacks are realistic.
+12. Summary: four findings and remaining future-work gap.
+
+provenance:
+- Use only figures and values reported in the provided PDF.
+- No external logos, screenshots, or generated assets.

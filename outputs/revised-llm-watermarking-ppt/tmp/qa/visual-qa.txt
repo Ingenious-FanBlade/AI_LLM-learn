@@ -1,0 +1,23 @@
+visual QA summary:
+- Mode: revised create deck matching the prior visual system.
+- Slide count: 12.
+- Language: English.
+- Cover: no experimental outcome metrics shown.
+- Required order retained: evaluation metrics precede experimental result analysis; final slide is summary.
+- New contribution represented: Combined KGW-EXP embedding pipeline and Fisher combined detection.
+- Key revised evidence included:
+  - Combined configuration: KGW gamma 0.5, KGW delta 2.0, EXP k=4, Fisher theta 2.2.
+  - PPL: EXP 11.17, KGW 25.05, Combined 17.26, natural 19.63.
+  - Robustness n=50 C4: KGW 0.94/0.20/0.12, EXP 0.98/0.86/0.36, Combined 1.00/0.90/0.68.
+  - Deployment recommendation: Combined for adversarial paraphrasing/deletion scenarios.
+- Visual checks:
+  - Contact sheet inspected after final export.
+  - Full-size slides 4, 10, and 11 inspected after layout fixes.
+  - No visible text clipping or chart overlap in inspected slides.
+  - Method colors remain consistent: KGW green, EXP blue, Combined amber, attacks rust.
+- Package checks:
+  - Final PPTX exists and is non-empty.
+  - PPTX package contains 12 slide XML files.
+  - Empty media files: 0.
+- Caveat:
+  - artifact-tool wrote a sidecar inspect file and returned a non-zero shell status after successful export; PPTX package structure and previews were independently verified.

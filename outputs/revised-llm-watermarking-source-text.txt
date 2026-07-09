@@ -1,0 +1,824 @@
+--- PAGE 1 ---
+LLM Watermarking for Intellectual Property
+Protection:
+A Comparative Study of KGW and EXP
+Guo Yutai, Zhong Yimin, Wang Yanzhi, Ouyang Zhaohong,
+Qin Xiaoyu, Yao Hanbin
+June 22, 2026
+1 Introduction
+1.1 Research Background
+With the rapid iteration and large-scale deployment of large language model (LLM) technolo-
+gies, artificial intelligence generated content (AIGC) has been widely adopted in areas such as
+copywriting, knowledge dissemination, and business document composition. Text generated
+by LLMs offers advantages in high efficiency and diverse expression, but it also poses serious
+challenges to intellectual property (IP) protection. On one hand, the ownership of AI-generated
+content is ambiguous, making infringement difficult to trace. On the other hand, attackers can
+modify generated content through paraphrasing, synonym substitution, and text rewriting, fur-
+ther complicating content provenance and forensic evidence collection. Against this backdrop,
+watermarking techniques for LLMs have emerged as a core solution to these IP protection chal-
+lenges.
+However, mainstream token-level watermarking algorithms generally face a prominent ro-
+bustness bottleneck: minor token-level tampering such as synonym replacement or random
+deletion can cause a sharp drop in detection performance, which severely limits the practical
+value of watermarking technology in real-world dissemination scenarios. How to improve the
+attack resistance of watermarks while ensuring text quality and detection effectiveness has be-
+come an urgent problem to be solved in current LLM watermarking research.
+1.2 Technical Definition and Core Evaluation Criteria
+LLM watermarking technology embeds imperceptible feature signals into the text generated
+by the model or into the model weights themselves. Without compromising text readability,
+it enables traceability and authorship attribution of AI-generated content, thereby providing
+technical support for IP protection of LLM outputs. A practically useful LLM watermarking
+algorithm must simultaneously satisfy three core performance requirements:
+•Effectiveness:The watermark detection algorithm can stably and accurately identify
+watermarked text.
+•Imperceptibility:The watermark embedding process has minimal impact on text fluency
+and semantic integrity, remaining unnoticeable to human observation.
+1
+
+--- PAGE 2 ---
+•Robustness:After common removal attacks such as paraphrasing, rewriting, or noise
+injection, the watermark signal remains detectable.
+1.3 Current Research Status
+The academic community and open-source community have proposed various LLM text wa-
+termarking schemes. Among them, the KGW algorithm based on vocabulary probability dis-
+tribution perturbation [1], and the EXP algorithm based on exponential probability bias [2],
+are two representative classic approaches. Both have been engineered and made available via
+GitHub open-source projects; the official implementation of the EXP algorithm is integrated
+into the MarkLLM open-source toolkit [3], which is widely used for algorithm reproduction
+and performance validation.
+However, existing research still has two notable gaps. First, most open-source projects fo-
+cus on independent code implementation, and there is a lack of horizontal comparative analysis
+of the two algorithms in terms of effectiveness, imperceptibility, and robustness under unified
+experimental conditions. Moreover, performance varies significantly across different runtime
+environments and parameter configurations, making it difficult to assess their applicability in
+real-world IP protection scenarios. Second, single watermarking algorithms have obvious struc-
+tural limitations. Both KGW and EXP are typical token-level watermarks whose signals rely
+on the exact identity of generated tokens. Existing studies have confirmed that both algorithms
+suffer catastrophic performance degradation under simple word-level attacks such as synonym
+substitution and token deletion [4]. At present, few studies have explored multi-mechanism
+fusion schemes to complement the advantages of different watermark mechanisms and improve
+overall attack resistance.
+1.4 Work of This Paper
+To address the above issues, this paper carries out the following work:
+1. Fully reproduce the classic KGW and EXP LLM text watermarking algorithms based on
+open-source code repositories [?,?], and conduct controlled comparative experiments un-
+der a unified environment. We systematically evaluate the two algorithms around three
+core metrics — effectiveness, imperceptibility, and robustness — and analyze their tech-
+nical characteristics and applicable scenarios.
+2. Propose a parallel fusion watermarking algorithm combining KGW and EXP mecha-
+nisms. The algorithm applies KGW logit bias to green-list tokens in the pre-sampling
+stage, and adopts EXP-based exponential resampling for final token selection, so as to
+integrate the statistical signals of both mechanisms. In the detection stage, the Fisher
+combination test is used to fuse thep-values of the two sub-detectors to realize joint
+decision-making.
+3. Conduct comparative experiments on the proposed fusion algorithm with the two baseline
+algorithms. We verify the performance improvement of the fusion scheme in terms of
+attack resistance, and evaluate its text quality and baseline detection effectiveness, so as
+to verify the balance between robustness and imperceptibility of the scheme.
+Our work provides a reference for the engineering deployment and future optimization of
+LLM watermarking technologies.
+2
+
+--- PAGE 3 ---
+1.5 Paper Structure
+The chapters are organized as follows: Chapter 1 Introduction; Chapter 2 Problem Definition;
+Chapter 3 Algorithm Design; Chapter 4 Experimental Procedure; Chapter 5 Evaluation Results;
+Chapter 6 Conclusion.
+2 Problem Definition
+This chapter clarifies the research problem, experimental constraints, and quantitative evalua-
+tion criteria in the context of LLM text watermark deployment. We establish a unified experi-
+mental framework for both classic algorithm reproduction and fusion algorithm validation.
+2.1 Research Questions
+Existing studies mostly reproduce either KGW or EXP in isolation, lacking a horizontal com-
+parison under identical conditions, and quantitative performance data for the three metrics are
+insufficient. Meanwhile, there is a lack of exploration on multi-mechanism fusion watermarking
+schemes. This paper reproduces both classic algorithms under the same environment, proposes
+a KGW-EXP fusion algorithm, and conducts experiments around five specific questions:
+1. Under unified conditions, what are the differences in baseline detection effectiveness be-
+tween KGW and EXP, and how do key parameters affect their effectiveness?
+2. Compare the text fluency after watermark embedding for both baseline algorithms, and
+analyze how parameter variations affect imperceptibility.
+3. Under synonym substitution and word deletion attacks, compare the robustness of the two
+baseline algorithms against tampering.
+4. What is the baseline detection performance of the proposed KGW-EXP fusion algorithm,
+and does it achieve better attack resistance than single algorithms under the two typical
+tampering scenarios?
+5. Compared with the two baseline algorithms, how is the text quality of the fusion algo-
+rithm, and whether it achieves a better balance between robustness and imperceptibility?
+2.2 Scope Boundaries
+To ensure rigor, specificity, and fair comparison in this experiment, and to avoid overgener-
+alization, we explicitly define the boundaries of the research subject, content, experimental
+scenarios, and environment.
+•Research subject:Only text-based LLM watermarks are studied; model weights and
+audio-visual multimodal watermarks are excluded.
+•Research content:The KGW and EXP algorithms are reproduced strictly following
+the original papers’ source code [1, 2]; no modifications are made to their algorithmic
+structure or computational logic. On this basis, this paper proposes a KGW-EXP parallel
+fusion watermark scheme as the algorithmic improvement of this work.
+3
+
+--- PAGE 4 ---
+•Test scenarios:Robustness tests are limited to two common manual tampering methods
+— synonym substitution and word deletion — while extreme attacks such as model fine-
+tuning are excluded.
+•Experimental environment:All three algorithms share the same software/hardware
+stack, base model, dataset, and attack tools to ensure controlled variable conditions and
+fair comparison.
+2.3 Definition of Core Evaluation Metrics
+To enable quantitative evaluation of algorithm performance, and in line with common practices
+in the LLM watermarking field, we refine the three core metrics — effectiveness, impercepti-
+bility, and robustness — as follows. All three algorithms are evaluated using the same metric
+system.
+2.3.1 Watermark Effectiveness
+Effectiveness measures the algorithm’s ability to identify watermarked text. It is the foundation
+for traceability and copyright determination, requiring accurate discrimination between water-
+marked and non-watermarked (original) text. This experiment uses two metrics: True Positive
+Rate (TPR) and separation of detection distributions.
+True Positive Rate (TPR).TPR is the core quantitative metric for evaluating watermark
+detection capability, representing the proportion of all watermarked samples correctly identified
+as carrying a watermark:
+TPR= Number of watermarked texts correctly identified
+Total number of watermarked texts (1)
+TPR ranges from 0 to 1; the closer to 1, the higher the detection accuracy. In the experiments,
+TPR under no-attack conditions serves as the baseline, and we also observe how TPR changes
+when key parameters vary.
+Separation of Detection Distributions.This metric assesses the ability to distinguish wa-
+termarked texts from ordinary non-watermarked texts. For KGW, the detection score (z-score
+meanµ) is used as the statistical measure; for EXP and the fusion algorithm, thep-value from
+statistical hypothesis testing is used. Lower overlap and larger mean difference indicate clearer
+watermark signal characteristics and better effectiveness.
+2.3.2 Text Imperceptibility
+Imperceptibility requires that the watermark embedding process does not compromise semantic
+integrity, fluency, or naturalness. This experiment uses Perplexity (PPL) as the primary quanti-
+tative metric.
+Perplexity (PPL).Perplexity is a classic NLP metric for measuring text fluency and seman-
+tic coherence. Lower PPL indicates more grammatically sound, logically coherent, and natural
+text. We compute PPL for both original and watermarked text, and use the difference:
+∆PPL=PPL watermarked −PPL original (2)
+A smaller∆PPL implies weaker negative impact and better imperceptibility.
+Text Quality Stability.This metric evaluates how much text fluency fluctuates when ad-
+justing core parameters. If PPL increases only slightly with stronger parameters, the algorithm
+better balances effectiveness and imperceptibility.
+4
+
+--- PAGE 5 ---
+2.3.3 Algorithm Robustness
+Robustness measures the ability to still detect the watermark signal after tampering or attacks.
+This experiment uses two typical attack scenarios: synonym substitution and word deletion.
+Post-Attack True Positive Rate (TPRattack).
+TPRattack = Number of watermarked texts correctly identified after attack
+Total number of attacked watermarked texts (3)
+Robustness Coefficient.To eliminate bias caused by differences in baseline detection rates
+between algorithms, we introduce the robustness coefficient for fair comparison:
+Robustness Coefficient= TPRattack
+TPRno-attack
+(4)
+This coefficient represents the fraction of watermark detection capability retained after an at-
+tack. The closer to 1, the stronger the algorithm’s robustness.
+3 Algorithm Design
+3.1 General Principle of LLM Text Watermarking
+When a large language model generates text, it scores each candidate token based on the preced-
+ing context; higher scores are more likely to be selected. Probability perturbation watermarks
+exploit this property as follows:
+•Embedding:Using a secret key known only to the watermarker, the scores of some
+tokens are artificially adjusted, guiding the model to preferentially select those tokens
+and leaving an invisible statistical trace.
+•Detection:The same key is used to reconstruct which tokens were “specially marked”,
+and corresponding statistical tests are performed to determine whether the text contains a
+watermark.
+3.2 KGW Watermark Algorithm
+Proposed by Kirchenbauer et al. [1], KGW is the most widely used and reproduced text water-
+marking algorithm. Its core idea is “vocabulary splitting + score boosting.”
+3.2.1 Basic Idea
+Before generating each token, the secret key is used to randomly split all candidate tokens into
+a green list and a red list. A uniform biasδis added to the scores of green-list tokens, making
+the model more likely to choose them. The resulting text exhibits a statistical pattern: green-list
+tokens appear more frequently. Detection exploits this pattern and uses az-test to identify the
+watermark.
+5
+
+--- PAGE 6 ---
+3.2.2 Core Procedure
+Watermark Embedding:
+1. Use the secret key to generate a random splitting rule based on the previous token, divid-
+ing candidate tokens into green and red lists.
+2. Add a fixed biasδto all green-list tokens; leave red-list token scores unchanged.
+3. Apply softmax to obtain the adjusted probability distribution, and sample the next token.
+4. Repeat the above steps to generate the entire text token by token.
+Watermark Detection:
+1. Use the same secret key to reconstruct the green-list split for each token position.
+2. Count the total number of tokens in the text that belong to the green list.
+3. Compute a normalizedz-score; if it exceeds the preset threshold, the text is classified as
+watermarked.
+3.2.3 Key Parameters
+•Watermark strengthδ:The amount of bias added to green-list tokens. Increasingδ
+makes the watermark easier to detect but may affect text fluency.
+•Green-list ratioγ:The proportion of green-list tokens among all candidates at each split.
+The original paper recommendsγ= 0.5.
+•Detection threshold:The criticalz-score value for deciding whether a text is water-
+marked. The original paper recommends 4.0, which yields a very low false positive rate.
+3.2.4 Flowchart
+3.3 EXP Watermark Algorithm
+EXP is an unbiased watermarking scheme based on exponential resampling [2], whose official
+implementation is integrated in the MarkLLM open-source toolkit [3]. Its core idea is “expo-
+nential resampling”, which does not rely on vocabulary splitting but uses statistical hypothesis
+testing for watermark detection.
+3.3.1 Basic Idea
+Before generating each token, the secret key is used to generate a set of random weights based
+on the prefix context. The algorithm performs exponential resampling on the original probabil-
+ity distribution, so that the selected tokens follow a specific statistical distribution biased by the
+secret key. Detection uses a statistical hypothesis test to determine whether such a distribution
+shift exists in the text.
+6
+
+--- PAGE 7 ---
+Figure 1: KGW watermark algorithm flowchart. The key step (highlighted in orange) adds bias
+δto green-list token logits before sampling.
+7
+
+--- PAGE 8 ---
+3.3.2 Core Procedure
+Watermark Embedding:
+1. Use the secret key and the preceding token prefix to generate a pseudorandom seed.
+2. Generate a uniform random vector based on the seed, and compute the exponential re-
+sampling score for each candidate token.
+3. Select the token with the highest resampling score as the next output token.
+4. Repeat the above steps to generate the entire text token by token.
+Watermark Detection:
+1. Use the same secret key to reconstruct the random weight for each token position.
+2. Compute an aggregate test statistic for the entire text based on the generated tokens.
+3. Use statistical hypothesis testing to compute a significancep-value. The smaller thep-
+value, the higher the probability that the text is watermarked.
+3.3.3 Key Parameters
+•Detection thresholdτ:The criticalp-value. If thep-value is below this threshold, the
+text is classified as watermarked.
+•Prefix lengthk:The number of preceding tokens used as context for the pseudorandom
+seed; longer prefix provides more stable seeding.
+3.3.4 Flowchart
+3.4 Combined KGW-EXP Watermark Algorithm
+To address the insufficient robustness of single token-level watermarks against word-level tam-
+pering, this paper proposes a parallel fusion watermarking scheme. The scheme integrates the
+statistical signals of KGW and EXP mechanisms through two-stage embedding and Fisher com-
+bined detection, so as to improve attack resistance while maintaining acceptable text quality.
+3.4.1 Design Idea
+The core idea of the fusion algorithm is the parallel superposition of “logit bias + exponential
+resampling”. In the generation stage, the KGW mechanism is first used to bias the logits of
+green-list tokens, preliminarily shaping the probability distribution; on this basis, EXP-style
+exponential resampling is performed on the adjusted distribution, so that the generated text
+carries both KGW and EXP watermark signals at the same time. In the detection stage, the
+two independent detection signals are fused through the Fisher combination test to improve the
+detection stability under tampering attacks.
+8
+
+--- PAGE 9 ---
+Figure 2: EXP watermark algorithm flowchart. The key step (highlighted in blue) selects the
+token maximizing the exponential resampling score.
+9
+
+--- PAGE 10 ---
+3.4.2 Watermark Embedding Procedure
+The embedding process consists of four sequential steps:
+1.KGW logit bias:Based on the left context window and the secret key, the vocabulary is
+divided into green list and red list, and a fixed biasδis added to the logits of all green-list
+tokens.
+2.Temperature scaling:The biased logits are scaled by temperature to adjust the sharpness
+of the probability distribution:
+logits = logits
+temperature (5)
+3.Probability calculation:Softmax is applied to the scaled logits to obtain the probability
+distribution of candidate tokens.
+4.EXP resampling:A random seed is generated based on the prefix context and the secret
+key to produce a uniform random vectoru. The token that maximizesu 1/pi
+i (wherep i is
+the probability of thei-th token) is selected as the output token.
+3.4.3 Watermark Detection Procedure
+The detection adopts the Fisher combination test to fuse the results of two sub-detectors:
+1.Calculate sub-detectorp-values.
+• For the KGW sub-detector: calculate thez-scorez KGW of the text, and convert it to
+a one-tailedp-value through the standard normal CDFΦ:
+pKGW = 1−Φ(z KGW)(6)
+• For the EXP sub-detector: directly output the detectionp-valuep EXP under the null
+hypothesis that the text contains no EXP watermark.
+2.Fisher combination statistic.Under the null hypothesis, if the twop-values are inde-
+pendent and both followUniform(0,1), the combined statistic:
+χ2 =−2
+ 
+lnp KGW + lnp EXP
+
+(7)
+follows aχ 2 distribution with2k= 4degrees of freedom (k= 2detectors).
+3.Calculate combinedp-value.
+pcombined = 1−F χ2
+4
+(χ2)(8)
+whereF χ2
+4
+is the CDF of theχ 2 distribution with 4 degrees of freedom.
+4.Score conversion and threshold decision.To follow the convention that higher score
+indicates higher likelihood of watermark, we take the negative logarithm:
+score =−log 10
+ 
+max(pcombined,10 −12)
+
+(9)
+The lower bound10 −12 prevents numerical overflow of the logarithm. Ifscore> θ Fisher,
+the text is judged to be watermarked.
+10
+
+--- PAGE 11 ---
+3.4.4 Key Parameters
+The fusion algorithm inherits the core parameters of KGW and EXP, and adds fusion-related
+configuration:
+•KGW module:γ= 0.5,δ= 2.0, prefix length= 1, consistent with the baseline KGW
+configuration.
+•EXP module:prefix lengthk= 4, consistent with the baseline EXP configuration.
+•Fusion module:fusion mode=Fisher combination,θ Fisher = 2.2, equal weight for the
+two sub-detectors.
+3.5 Core Comparison of the Three Algorithms
+Table 1 summarizes the key differences among all three methods.
+Table 1: Core comparison of KGW, EXP, and Combined watermarking algorithms.
+Aspect KGW EXP Combined
+Core mecha-
+nism
+V ocabulary split-
+ting + green-list
+logit bias
+Global exponential
+resampling (no
+splitting)
+KGW logit bias
++ EXP resampling
+parallel fusion
+Detection ba-
+sis
+Green-list token
+frequency (z-test)
+Distribution shift
+(p-value hypothe-
+sis test)
+Fisher combi-
+nation of two
+independentp-
+values
+Implementation
+complexity
+Simple logic, easy
+to implement
+Rigorous sta-
+tistical theory,
+moderately com-
+plex
+Two-stage embed-
+ding + combined
+detection, highest
+complexity
+Baseline ef-
+fectiveness
+Moderate, sensi-
+tive to parameters
+High, stable per-
+formance
+Highest, near-
+perfect baseline
+detection
+Robustness Poor under word-
+level attacks
+Moderate, weak
+against deletion
+Best among the
+three, significantly
+improved under
+both attacks
+Text quality Significant PPL in-
+crease
+Anomalously low
+PPL (reduced di-
+versity)
+PPL close to base-
+line, best balance
+3.6 Implementation Notes
+In this experiment, the code implementations of KGW and EXP strictly follow the original
+papers [1, 2] and the official MarkLLM open-source toolkit [3] without any modifications. All
+default parameters are consistent with the original paper’s recommendations, and parameter
+variation experiments are conducted within reasonable ranges as defined in the original papers.
+11
+
+--- PAGE 12 ---
+The proposed Combined algorithm is implemented based on the MarkLLM framework:
+the embedding stage integrates the KGW logit bias module and the EXP resampling module,
+and the detection stage implements the Fisher combination test logic independently. All three
+algorithms use the same base model, dataset, and attack tools to ensure fair comparison.
+4 Experiments
+4.1 Experimental Setup
+We evaluate three watermarking methods: the KGW green-list watermark [1], the EXP (Expo-
+nential) unbiased watermark [2], and a proposed Combined method that fuses KGW and EXP
+in a single generation-and-detection pipeline. All experiments use the MarkLLM toolkit [3].
+Texts are generated by Qwen2.5-1.5B-Instruct with a fixed generation length of 200 tokens for
+the baseline comparison experiments (Sections 4.2–4.5) and 100 tokens for the robustness ex-
+periments on the Combined method (Section 4.6). The baseline dataset consists of 20 news
+article prompts drawn from diverse topical domains; the robustness dataset samples 50 prompts
+from the C4 corpus. For each prompt, one watermarked completion and one unwatermarked
+(natural) completion are generated.
+KGWpartitions the vocabulary at each token step into a green list (fractionγ) and a red list,
+then adds a logit biasδto green-list token scores during generation. Detection uses a one-sided
+z-test with threshold 4.0. Default configuration:γ= 0.5,δ= 1.0, prefix length 1, left-window
+hashing scheme.
+EXPseeds a pseudorandom function with a hash of the precedingk-token prefix, then
+resamples each token to maximize an exponentially distributed score. Detection computes an
+aggregatep-value across the sequence; a sequence is declared watermarked ifp < τ. Default
+configuration: prefix lengthk= 4, detection thresholdτ= 10 −6.
+Combinedis a proposed hybrid method that applies KGW and EXP jointly during genera-
+tion and fuses their detection statistics via Fisher’s method.
+Generation.At each token step: (1) KGW computes the green list from the left-window
+context hash and adds biasδ= 2.0to green-list logits; (2) the logits are temperature-scaled;
+(3) a softmax probability distribution is computed; (4) EXP resampling is applied — a pseudo-
+random vectoruis generated from a prefix-based seed, and the tokeni ∗ = arg maxi u1/pi
+i is
+selected.
+Detection.Each sub-detector produces ap-value independently:
+• KGW outputs az-scorez KGW and converts it to a one-tailedp-value:p KGW = 1−
+Φ(zKGW), whereΦis the standard normal CDF.
+• EXP returnsp EXP directly from its resampling statistic.
+Under the null hypothesis (no watermark), bothp-values are independently uniform on[0,1],
+so Fisher’s combined statistic
+χ2 =−2
+ 
+lnp KGW + lnp EXP
+
+(10)
+follows aχ 2 distribution with2k= 4degrees of freedom (k= 2detectors). The combined
+p-value is
+pcombined = 1−F χ2
+4
+(χ2),(11)
+12
+
+--- PAGE 13 ---
+and the final detection score (higher = more likely watermarked) is
+score =−log 10
+ 
+max(pcombined,10 −12)
+
+.(12)
+A sequence is declared watermarked ifscore> θ, whereθ= 2.2in our experiments. Key
+Combined parameters are listed in Table 2.
+Table 2: Configuration of the Combined watermark method.
+Parameter Value
+KGWγ0.5
+KGWδ2.0
+KGWz-threshold 4.0
+EXP prefix lengthk4
+EXP detection threshold10 −4
+Fisher thresholdθ2.2
+Shared hash key 15485863
+Three evaluation dimensions are assessed: (1)detection accuracy, measured by TPR and
+FPR; (2)text quality, measured by perplexity (PPL) evaluated by GPT-2 (lower is better);
+and (3)robustnessunder two word-level attacks — Word Substitution (Word-S, 20% token
+replacement) and Word Deletion (Word-D, 30% token removal).
+4.2 Detection Accuracy under Default Settings
+Table 3 reports detection accuracy of KGW and EXP under default configurations (n= 20per
+class). EXP achieves perfect detection (TPR= 1.000) with zero false positives (FPR= 0.000).
+KGW achieves TPR= 0.800with FPR= 0.000. The score distributions further illustrate
+the separation quality. For EXP, watermarkedp-values are vanishingly small — ranging from
+10−103 to10 −5 across samples — while natural textp-values are distributed approximately
+uniformly over[0,1]as expected under the null hypothesis (Figure 4). For KGW, the mean
+watermarkedz-score is0.80versus−0.43for natural text (Figure 3), with distributional overlap
+that accounts for the four missed detections at threshold 4.0.
+Table 3: Detection accuracy of EXP and KGW under default parameter settings (n= 20per
+class). Combined is evaluated separately in Section 4.6.
+Method TPR FPR Score (watermarked) Score (natural)
+EXP 1.000 0.000p-value≈10 −30 (mean)p-value∼Uniform[0,1]
+KGW 0.800 0.000z-scoreµ= 0.80z-scoreµ=−0.43
+4.3 Text Quality
+Table 4 compares mean perplexity (evaluated by GPT-2) of watermarked outputs against the
+unwatermarked baseline across all three methods. Both KGW and EXP produce text with
+lower PPL than the natural baseline (19.63), as further visualized in Figure 5. This counter-
+intuitive result is attributable to the fact that both mechanisms bias token selection toward
+higher-probability tokens, reducing perplexity at the cost of lexical diversity. EXP produces
+substantially lower PPL than KGW (11.17 vs. 25.05), reflecting its unbiased resampling design.
+13
+
+--- PAGE 14 ---
+Figure 3: KGW score distributions for watermarked vs. natural text (n= 20each). Water-
+marked meanz-scoreµ= 0.80; natural meanµ=−0.43.
+Figure 4: EXPp-value distributions for watermarked vs. natural text. Left: full range[0,1];
+right: zoomed view[0,0.05]. All 20 watermarked samples cluster near zero.
+14
+
+--- PAGE 15 ---
+The Combined method achieves a PPL of 17.26, close to the natural baseline, suggesting that
+the KGW and EXP biases partially offset each other in the hybrid pipeline.
+Table 4: Mean perplexity (PPL, GPT-2) of watermarked vs. natural text. Lower PPL indicates
+more predictable output;∆PPL=PPL wtm−PPL natural.
+Method Watermarked PPL Natural PPL∆PPL
+EXP 11.17 19.63−8.46
+KGW 25.05 19.63+5.42
+Combined 17.26 19.63−2.37
+Figure 5: Text quality comparison (PPL, GPT-2) among EXP, KGW, and Combined. The
+dashed line marks the natural (unwatermarked) baseline PPL of 19.63.
+4.4 Parameter Ablation Study
+4.4.1 KGW: Effect of Watermark Strengthδ
+We vary the logit biasδ∈ {0.1,0.3,0.5,1.0,2.0}while fixingγ= 0.5. As shown in Table 5
+and Figure 6, TPR increases monotonically withδ: from 0.000 atδ≤0.3, to 0.200 atδ= 0.5,
+0.600 atδ= 1.0, and 1.000 atδ= 2.0. PPL remains relatively stable forδ≤1.0(range 10.6–
+11.2) but rises sharply to 13.89 atδ= 2.0, where the bias materially distorts the generation
+distribution. This confirms the fundamental detectability–quality trade-off in KGW: the default
+δ= 1.0(TPR= 0.600, PPL= 11.03) represents a moderate operating point, while achieving
+TPR≥0.9requiresδ= 2.0at a notable quality cost.
+4.4.2 KGW: Effect of Green-List Ratioγ
+We varyγ∈ {0.25,0.50,0.75}while fixingδ= 1.0. As shown in Table 6 and Figure 7, TPR
+follows a non-monotonic pattern:γ= 0.50achieves the highest TPR (0.700),γ= 0.25yields
+15
+
+--- PAGE 16 ---
+Table 5: KGW ablation on watermark strengthδ(γ= 0.5fixed,n= 20).
+δTPR Watermarked PPL
+0.1 0.000 10.76
+0.3 0.000 10.61
+0.5 0.200 11.17
+1.0 0.600 11.03
+2.0 1.000 13.89
+Figure 6: KGW ablation: effect of watermark strengthδon detection rate (TPR, left axis)
+and text perplexity (PPL, right axis). TPR increases monotonically while PPL rises sharply at
+δ= 2.0.
+16
+
+--- PAGE 17 ---
+0.650, andγ= 0.75collapses to 0.000. The failure atγ= 0.75stems from signal dilution:
+when nearly all vocabulary tokens are on the green list, the expected green-token proportion
+under the null hypothesis is close to 0.75 regardless of watermarking, so the excessz-score
+signal is negligible. PPL is stable acrossγvalues (11.0–12.0), confirming that the green-list
+ratio is not the primary driver of quality degradation.
+Table 6: KGW ablation on green-list ratioγ(δ= 1.0fixed,n= 20).
+γTPR Watermarked PPL
+0.25 0.650 11.72
+0.50 0.700 11.99
+0.75 0.000 10.98
+Figure 7: KGW ablation: effect of green-list ratioγon detection rate (TPR). TPR collapses to
+zero atγ= 0.75due to signal dilution.
+4.4.3 EXP: Hyperparameter Sensitivity
+We ablate two EXP hyperparameters independently.Detection thresholdτ∈ {10 −6,10 −4,10 −2}
+(prefixk= 4fixed): TPR is 0.900 atτ= 10 −6 and 0.950 at bothτ= 10 −4 and10 −2, with
+FPR= 0.000throughout (Figure 8).Prefix lengthk∈ {1,4,8}(τ= 10 −6 fixed): TPR is
+1.000 atk= 1andk= 8, with a minor dip to 0.950 atk= 4, and FPR= 0.000throughout
+(Figure 9). In both cases, variation across settings is negligible (≤0.1TPR). This insensitivity
+stems from the extremely strong watermark signal embedded by EXP: watermarkedp-values
+typically lie in the range10 −20–10−103, far below any reasonable threshold, making the exact
+parameter values inconsequential.
+17
+
+--- PAGE 18 ---
+Figure 8: EXP ablation: effect of detection
+thresholdτon TPR. Performance is stable
+across three orders of magnitude.
+Figure 9: EXP ablation: effect of prefix length
+kon TPR. Minor variation (≤0.05) across all
+tested values.
+4.5 Robustness Against Paraphrasing Attacks (KGW and EXP)
+Table 7 and Figures 10–11 report TPR of KGW and EXP under two word-level attacks (n= 20,
+attack rates matched to the baseline experiment).
+Table 7: TPR of EXP and KGW under word-level paraphrasing attacks (n= 20). FPR= 0.000
+in all conditions.
+Method No Attack Word-S Word-D
+EXP 1.000 0.050 0.000
+KGW 0.800 0.050 0.100
+Both methods suffer dramatic degradation under attack. Word-S reduces the TPR of both
+methods to 0.050, effectively destroying watermark detectability in 19 out of 20 cases. Under
+Word-D, EXP falls to 0.000 while KGW retains a marginal TPR of 0.100.
+Both collapses share the same root cause: both watermarks are fundamentally token-level
+mechanisms whose signals depend on the exact identity of generated tokens. Word-S invalidates
+this by changing token identities — for KGW, synonym substitution alters both the substituted
+token’s green/red identity and the context hash for subsequent tokens, breaking the statistical
+signal throughout; for EXP, it disrupts the accumulated score at each modified position. The
+marginal advantage of KGW under Word-D (0.100 vs. 0.000) arises because deletion preserves
+the green/red identity of surviving tokens, allowing a small number of high-confidence samples
+to still exceed thez-score threshold, whereas EXP’s jointp-value across the full sequence is
+more sensitive to the reduction in sequence length that deletion causes.
+4.6 Robustness of the Combined Method
+To evaluate whether the hybrid KGW+EXP design improves robustness, we conduct a larger-
+scale robustness experiment (n= 50prompts from C4, generation length 100 tokens) compar-
+ing all three methods under Word-S (20% substitution rate) and Word-D (30% deletion rate).
+Results are shown in Table 8 and Figure 12.
+18
+
+--- PAGE 19 ---
+Figure 10: Robustness of EXP and KGW across attack conditions (n= 20). Both methods
+collapse under Word-S and Word-D attacks.
+Figure 11: Side-by-side robustness comparison of EXP vs. KGW under no attack, Word-S, and
+Word-D conditions.
+Table 8: Robustness comparison of KGW, EXP, and Combined (n= 50, C4 dataset). FPR
+= 0.000in all conditions.
+Method No Attack Word-S (20%) Word-D (30%)
+KGW 0.94 0.20 0.12
+EXP 0.98 0.86 0.36
+Combined 1.00 0.90 0.68
+19
+
+--- PAGE 20 ---
+Figure 12: Robustness comparison of KGW, EXP, and Combined under no attack, Word-S
+(20%), and Word-D (30%) conditions (n= 50, C4 dataset).
+The Combined method achieves TPR= 1.000with no attack, and retains TPR= 0.900
+under Word-S and TPR= 0.680under Word-D — substantially outperforming both individual
+methods. Under Word-S, EXP alone achieves TPR= 0.860, which is already far superior
+to KGW (0.200); the Combined method gains a further 4 percentage points, suggesting that
+the Fisher fusion amplifies the residual EXP signal that survives synonym substitution. The
+improvement is most dramatic under Word-D: Combined (0.680) outperforms EXP (0.360) by
+32 percentage points and KGW (0.120) by 56 percentage points. This is explained by the
+complementary nature of the two sub-detectors: the KGWz-score, computed over surviving
+tokens, contributes positive signal even after deletion, and the Fisher combination allows this
+residual signal to boost the combined statistic above the detection threshold in cases where
+neither detector alone would succeed.
+These results demonstrate that the KGW+EXP hybrid design substantially addresses the
+robustness limitation identified in Section 4.5. While neither individual method provides reli-
+able protection under word-level attacks, their statistical fusion via Fisher’s method produces a
+watermark that is meaningfully harder to remove.
+5 Evaluation
+5.1 Overall Comparison
+Table 9 consolidates the multi-dimensional comparison among all three methods. EXP domi-
+nates KGW on detection and text quality under benign conditions, while the Combined method
+achieves the best overall profile: perfect no-attack detection, near-baseline text quality, and
+substantially improved robustness over both individual methods.
+20
+
+--- PAGE 21 ---
+Table 9: Multi-dimensional comparison of EXP, KGW, and Combined.
+Dimension EXP KGW Combined Verdict
+Detection
+(no attack)
+TPR=1.00,
+FPR=0.00
+TPR=0.80,
+FPR=0.00
+TPR=1.00,
+FPR=0.00
+EXP /
+Combined
+Text quality
+(PPL)
+11.17 (lower than
+baseline)
+25.05 (higher than
+baseline)
+17.26 (≈baseline) Combined
+Robustness:
+Word-S
+TPR=0.86 TPR=0.20 TPR=0.90 Combined
+Robustness:
+Word-D
+TPR=0.36 TPR=0.12 TPR=0.68 Combined
+Score sepa-
+rability
+p≈10 −30 (wtm.)z-score overlap Fisher score> θEXP /
+Combined
+Hyperparam.
+stability
+Low sensitivity Sensitive toδ, γModerate (two
+configs)
+EXP
+InterpretabilityLower Higher Moderate KGW
+5.2 Detection Accuracy
+EXP and Combined both achieve perfect detection (TPR= 1.000, FPR= 0.000) under default
+no-attack conditions, while KGW reaches only TPR= 0.800. Thep-value separation shown in
+Figure 4 is essentially perfect for EXP: all 20 watermarked sequences receivep-values below
+10−5, while no natural sequence falls below10 −2. The exponential resampling mechanism
+ensures that each generated token contributes a statistically independent signal that accumulates
+multiplicatively, producing an aggregatep-value that grows exponentially with sequence length.
+KGW’sz-test-based detection is inherently noisier. Thez-score is a linear statistic that
+averages the green-token excess over the sequence; at 200 tokens with the default threshold of
+4.0, four samples fail to exceed the detection boundary (TPR= 0.800). The score distribution in
+Figure 3 shows that watermarked and naturalz-scores partially overlap, a structural limitation
+of the additive mechanism at moderateδ. Raisingδto 2.0 achieves TPR= 1.000but at a
+significant quality cost (PPL= 13.89), illustrating that KGW cannot simultaneously optimize
+both dimensions.
+The Combined method resolves this tension: by fusing the two detection signals via Fisher’s
+method, it achieves TPR= 1.000without requiring an aggressiveδ. All three methods achieve
+FPR= 0.000, confirming that false positive rates are well controlled across all configurations.
+5.3 Text Quality (Stealth Analysis)
+Table 4 and Figure 13 reveal starkly different quality profiles across the three methods. KGW
+(PPL= 25.05) is the only method that raises perplexity above the natural baseline (19.63), a
+direct consequence of the additive logit bias forcing generation toward the green-list subset and
+away from the model’s preferred token distribution. EXP (PPL= 11.17) produces anomalously
+low perplexity, reflecting its Gumbel resampling mechanism which systematically selects high-
+probability tokens and results in more conservative, less diverse output — lower PPL here is
+not a quality improvement but a sign of reduced lexical richness.
+The Combined method achieves PPL= 17.26, almost exactly matching the natural baseline
+(∆PPL=−2.37). This near-neutral quality impact arises because the KGW and EXP biases
+partially cancel: KGW’s green-list pressure pushes logits upward for a fixed token subset, while
+21
+
+--- PAGE 22 ---
+EXP’s resampling redistributes probability mass more broadly. The net effect is a generation
+distribution closer to the unperturbed model output. From a stealth perspective, Combined is
+the strongest of the three methods: its watermarked text is statistically indistinguishable from
+natural output by a perplexity-based detector, unlike KGW (significantly higher PPL) or EXP
+(suspiciously lower PPL).
+Figure 13: Stealth analysis: watermarked vs. natural PPL across KGW parameter settings.
+Left:δablation; right:γablation. The orange dashed line marks the natural text baseline (PPL
+= 17.26for the KGW/EXP baseline experiment; 19.63 for the Combined experiment using
+GPT-2).
+5.4 Robustness
+The robustness results reveal a clear performance hierarchy: Combined>EXP>KGW across
+both attack types, as shown in Table 8 and Figure 12.
+KGW collapses most severely under both attacks (Word-S: 0.200, Word-D: 0.120), confirm-
+ing that the green-list signal — which depends on exact token identities and context hashes — is
+highly fragile to any token-level perturbation. EXP performs substantially better under Word-S
+(TPR= 0.860), because its resampling score is computed independently at each position and
+the surviving unmodified tokens still contribute strong signal to the aggregatep-value. How-
+ever, EXP degrades more under Word-D (TPR= 0.360) because its jointp-value is sensitive to
+sequence length reduction.
+The Combined method outperforms both across the board. Under Word-S, it achieves TPR
+= 0.900, a 4-point gain over EXP alone, suggesting that the residual KGW signal for unsubsti-
+tuted tokens provides a modest additional boost via the Fisher combination. The largest gain is
+under Word-D: Combined achieves TPR= 0.680versus EXP’s 0.360 and KGW’s 0.120. This
+32-point improvement over EXP arises from the complementary degradation profiles of the two
+sub-detectors: when deletion shortens the sequence and weakens EXP’s jointp-value, the KGW
+z-score — computed only over surviving tokens — can still contribute meaningful signal, and
+the Fisher fusion lifts the combined statistic above the detection threshold in marginal cases
+where neither method alone would succeed.
+22
+
+--- PAGE 23 ---
+These results demonstrate that the hybrid design directly addresses the robustness limitation
+of token-level watermarks. Although neither KGW nor EXP alone provides reliable protec-
+tion under realistic word-level attacks, their statistical fusion substantially raises the bar for an
+adversary attempting removal.
+5.5 Pros, Cons, and Deployment Recommendations
+Based on our experiments, we summarize the practical deployment profile of each method.
+EXPis the preferred single-method choice when detection reliability and text quality un-
+der benign conditions are the primary concerns. Its key advantages are: (1) perfect TPR and
+FPR= 0at default settings; (2) low PPL (11.17), though this reflects reduced diversity rather
+than genuine quality improvement; and (3) near-zero sensitivity to hyperparameters. Its main
+limitation is vulnerability to word-level attacks, particularly Word-D (TPR= 0.360).
+KGWmay be preferred where interpretability and explicit parameter control are impor-
+tant. Itsδ–γparameter space provides a transparent detectability–quality trade-off. However,
+it achieves the weakest robustness of the three methods, and its PPL elevation (25.05) makes
+watermarked text noticeably less fluent. The catastrophic failure atγ= 0.75(TPR= 0.000) is
+an important practical warning about misconfiguration risk.
+Combinedis the recommended method for adversarial deployment scenarios. It achieves
+perfect no-attack detection, near-baseline text quality (∆PPL=−2.37), and the strongest ro-
+bustness under both Word-S (0.900) and Word-D (0.680). The main trade-off is increased con-
+figuration complexity: two separate watermark configs plus Fisher fusion parameters must be
+maintained. For IP protection use cases where paraphrasing attacks are a realistic threat, Com-
+bined’s robustness advantage decisively outweighs this overhead.
+6 Conclusion
+In this paper, we reproduced and systematically evaluated two representative LLM watermark-
+ing methods — KGW and EXP — and proposed a Combined hybrid method that fuses both via
+Fisher’s statistical combination. Experiments were conducted on text generated by Qwen2.5-
+1.5B-Instruct using the MarkLLM toolkit, covering three core desiderata: detection accuracy
+(TPR and FPR), text quality (PPL evaluated by GPT-2), and robustness against word-level para-
+phrasing attacks.
+Our experiments yield four principal findings. First, under benign conditions EXP is strictly
+superior to KGW as a standalone method: EXP achieves perfect detection (TPR= 1.000,
+FPR= 0.000) with a watermarked PPL of 11.17, versus KGW’s TPR= 0.800and PPL=
+25.05. KGW’s interpretable green-list mechanism comes at a real cost — its detection reliability
+depends heavily on the choice ofδandγ, and misconfiguration (e.g.,γ= 0.75) causes complete
+detection failure.
+Second, both KGW and EXP are highly vulnerable to word-level attacks when used alone.
+Under Word-S (20% substitution), KGW drops to TPR= 0.200and EXP to 0.860; under
+Word-D (30% deletion), KGW drops to 0.120 and EXP to 0.360. This exposes a fundamen-
+tal limitation of generation-time token-level watermarks: the embedded signal depends on the
+exact identity of generated tokens, and any operation that alters token identities — even while
+preserving meaning — degrades detectability.
+Third, the proposed Combined method substantially addresses this robustness limitation. By
+jointly embedding KGW and EXP signals during generation and fusing their detection statis-
+tics via Fisher’s method, Combined achieves TPR= 1.000with no attack, TPR= 0.900under
+23
+
+--- PAGE 24 ---
+Word-S, and TPR= 0.680under Word-D — outperforming EXP by 4 and 32 percentage points
+respectively under the two attacks. The Fisher fusion exploits the complementary degradation
+profiles of the two sub-detectors: when synonym substitution weakens KGW’s context-hash-
+based signal, EXP’s position-independent resampling score compensates; when deletion short-
+ens the sequence and weakens EXP’s jointp-value, the KGWz-score over surviving tokens
+provides residual uplift.
+Fourth, Combined achieves near-baseline text quality (PPL= 17.26,∆PPL=−2.37rela-
+tive to the natural baseline of 19.63), making it the most stealthy of the three methods. KGW’s
+additive logit bias raises PPL noticeably above baseline, while EXP’s resampling anomalously
+suppresses PPL below it — both deviations are potentially detectable by a perplexity-based ad-
+versary. Combined’s near-neutral quality impact makes its watermarked text statistically closest
+to natural LLM output.
+From this project, we learned that the central challenge in LLM watermarking is notde-
+tectionunder ideal conditions — all three methods achieve zero false positives, and both EXP
+and Combined achieve perfect TPR without attack — butrobustnessunder adversarial pertur-
+bation. A watermark that is easily removed by a basic synonym substitution tool offers limited
+practical value for IP protection. The Combined method demonstrates that statistical fusion
+of complementary token-level signals can meaningfully raise the robustness bar without sacri-
+ficing detection accuracy or text quality. Nevertheless, even Combined’s TPR of 0.680 under
+Word-D leaves room for improvement, and future work should explore semantic-level water-
+marking approaches that encode signals in higher-level properties of text inherently preserved
+under meaning-preserving transformations.
+References
+[1] J. Kirchenbauer, J. Geiping, Y . Wen, J. Katz, I. Miers, and T. Goldstein, “A watermark for
+large language models,” inProceedings of the 40th International Conference on Machine
+Learning (ICML), pp. 17061–17084, PMLR, 2023.
+[2] S. Aaronson and H. Kirchner, “Watermarking GPT outputs,”Blog post, Scott Aaronson’s
+Shtetl-Optimized, 2022. [Online]. Available:https://scottaaronson.blog/?p=
+6823
+[3] L. Pan, A. Liu, Z. He, Z. Gao, X. Zhao, Y . Lu, B. Zhou, S. Liu, X. Hu, L. Wen, I. King,
+and P. S. Yu, “MarkLLM: An open-source toolkit for LLM watermarking,” inProceedings
+of the 2024 Conference on Empirical Methods in Natural Language Processing: System
+Demonstrations (EMNLP), pp. 61–71, 2024.
+[4] X. Zhang, J. Li, S. Zhao, et al., “A Survey of Text Watermarking for Large Language Mod-
+els,”arXiv preprint arXiv:2402.18213, 2024. [Online]. Available:https://arxiv.
+org/abs/2402.18213
+24
